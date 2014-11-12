@@ -21,6 +21,12 @@
 	?>>
 		
 		<div id="wrapper" class="hfeed grid-container">
+
+			<div class="auBar">
+				<div class="container">
+					<p>AU Kogod logo goes here</p>
+				</div>
+			</div>
 		
 			<header id="page-header" role="banner">
 		

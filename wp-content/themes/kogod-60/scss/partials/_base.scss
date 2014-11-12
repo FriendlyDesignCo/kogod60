@@ -96,18 +96,10 @@ textarea {
 }
 
 .container {
-	// One col (mobile browsers)
-	@media screen and (max-width: 767px) {
-		padding: 20px;
-	}
-	// Compressed (tablets, small browsers)
-	@media screen and (min-width: 768px) and (max-width: 1024px) {
-		padding: 20px;
-	}
-	// Big'uns (desktop)
-	@media screen and (min-width: 1025px) {
-		padding: 40px;
-	}
+	max-width: 1200px;
+	@include span(100%);
+	margin: 0 auto;
+	float: none;
 }
 
 .fill { // Fill items (usually links that need to take up 100% of their parent)

@@ -413,15 +413,17 @@ input[type=text], textarea, select {
 textarea {
   resize: vertical; }
 
-@media screen and (max-width: 767px) {
-  .container {
-    padding: 20px; } }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .container {
-    padding: 20px; } }
-@media screen and (min-width: 1025px) {
-  .container {
-    padding: 40px; } }
+.container {
+  max-width: 1200px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  float: left;
+  padding-left: 2.38095%;
+  padding-right: 2.38095%;
+  margin: 0 auto;
+  float: none; }
 
 .fill {
   width: 100%;
@@ -508,6 +510,17 @@ h6 {
 	HEADER (scss/partials/_header.scss)
 ==========================================================================
 */
+.auBar {
+  height: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: #000;
+  color: #fff; }
+  body.admin-bar .auBar {
+    top: 32px; }
+
 header {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;

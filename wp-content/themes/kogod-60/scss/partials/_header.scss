@@ -3,6 +3,22 @@
 	HEADER (scss/partials/_header.scss)
 ==========================================================================
 */
+
+.auBar {
+  height: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  background: $black;
+  color: $white;
+  
+  body.admin-bar & {
+    top: 32px;
+  }
+}
+
 header {
   @include span(5);
 }

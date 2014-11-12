@@ -25,7 +25,7 @@ define('DB_USER', 'db139172_kogwpb');
 define('DB_PASSWORD', 'wm0ajKsnDYIY.');
 
 /** MySQL hostname */
-define('DB_HOST', 'internal-db.s139172.gridserver.com');
+define('DB_HOST', 'external-db.s139172.gridserver.com');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
