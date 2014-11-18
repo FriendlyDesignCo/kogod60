@@ -1,0 +1,163 @@
+/*
+==========================================================================
+  TIMELINE EVENT (scss/partials/_timeline-event.scss)
+==========================================================================
+*/
+
+article.timeline-events {
+  header {
+    text-align: center;
+    margin-top: 60px;
+
+    h1, 
+    h4 {
+      margin: 0;
+      text-transform: uppercase;
+    }
+    
+    h1 {  
+      @include font-size-large;
+      line-height: 1;
+    }
+    h4 {
+      @include font-family-interstate(900);
+      font-size: $medium - 7;
+      @include media-query('mobile') {
+        font-size: ($medium - 7) * .75;
+      }
+    }
+  }
+
+  .pagination {
+    @include span(100%);
+    margin: 65px 0;
+
+    ul {
+      height: 15px;
+      margin: 0;
+      padding: 0;
+
+      background-image: url('../img/background-diag-line-repeat-trans-8x8.gif');
+      background-size: 4px 4px;
+      list-style-type: none;
+      text-align: center;
+    }
+    li {
+      display: inline-block;
+
+      &.prev {
+        float: left;
+        a {
+          padding-left: 0;
+        }
+      }
+      &.next {
+        float: right;
+        a {
+          padding-right: 0;
+        }
+      }
+    }
+
+    a {
+      padding: 2px 10px;
+      position: relative;
+      top: -1px;
+
+      background: $white;
+      @include font-family-interstate(300);
+      font-size: $tiny;
+
+      span {
+        @include media-query('mobile') {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .description {
+    
+    &.hasImages {
+      .description__text {
+        @include media-query('mobile') {
+          @include span(100%);  
+        }
+        @include media-query('tablet-and-larger') {
+          @include span(50%);
+        }
+
+        *:first-child {
+          margin-top: 0;
+        }
+      }
+      .description__images {
+        @include media-query('mobile') {
+          @include span(100%);  
+        }
+        @include media-query('tablet-and-larger') {
+          @include span(50%);
+        }
+      }
+    }
+    
+    &.noImages {
+      .description__text {
+        @include media-query('mobile') {
+          @include span(100%);  
+        }
+        @include media-query('tablet-and-larger') {
+          @include span(70%);
+          margin: 0 auto;
+          float: none;
+        }
+      }
+    }
+
+    .image {
+      margin-bottom: 40px;
+
+      p {
+        font-style: italic;
+        color: $black-50;
+      }
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .video,
+  .gallery {
+    margin-bottom: 20px;
+    
+    header {
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+    h4 {
+      line-height: 1;
+    }
+  }
+
+  .gallery {
+    ul.images {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+    li {
+      @include media-query('mobile') {
+        @include span(50%);
+      }
+      @include span(25%);
+      padding-top: gutter();
+      padding-bottom: gutter();
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

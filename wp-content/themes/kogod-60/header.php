@@ -30,15 +30,17 @@
 		
 			<header id="page-header" role="banner">
 		
+				<?php if (is_home()) { ?>
 				<section id="branding">
-					<div id="site-title">
-						<h1><a class="fill" href="<?php echo esc_url(home_url('/')); ?>" title="<?php esc_attr_e( get_bloginfo('name'), 'blankslate' ); ?>" rel="home"><?php echo esc_html( get_bloginfo('name') ); ?></a></h1>
+					<div id="branding__title">
+						<h1>Kogod</h1>
+						<h2>60 Years of Business in DC</h2>
 					</div>
-					<div id="site-description"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('description'); ?></a></div>
 				</section>
+				<?php } ?>
 				
 				<nav id="main-nav" role="navigation">
-					<a class="handle icon"></a>
+					<!-- <a class="handle icon"></a> -->
 					<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
 				</nav>
 		

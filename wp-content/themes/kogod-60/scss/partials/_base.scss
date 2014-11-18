@@ -17,18 +17,23 @@ button,
 input,
 select,
 textarea {
-	color: #222;
+	color: $black;
 }
 
 html, body {
 }
 body {
-
+	@include font-family-garamond(300);
 }
 a {
+	text-decoration: none;
+	color: $blue;
 
 	&:hover {
-	
+		color: $red;
+	}
+	&:active {
+		opacity: .5;
 	}
 }
 
@@ -64,12 +69,43 @@ hr {
 	margin: 1em 0;
 	padding: 0;
 }
+.hr {
+	@include span(100%);
+	height: 15px;
+	margin: 45px 0;
+	background-image: url('../img/background-diag-line-repeat-8x8.gif');
+	background-size: 4px 4px;
+
+	&.trans {
+		opacity: .4;
+	}
+}
 
 audio,
 canvas,
 img,
 video { // Remove the gap between images, videos, audio and canvas and the bottom of their containers: h5bp.com/i/440
 	vertical-align: middle;
+}
+
+.embed-youtube, 
+.embed-vimeo {
+	width: 100%;
+	height: auto;
+	clear: both;
+	position: relative;
+
+	&:after {
+		content: "";
+		display: block;
+		padding-bottom: 56.2%;
+	}
+	iframe {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0; right: 0; bottom: 0; left: 0;
+	}
 }
 
 // Inputs & Forms
@@ -95,8 +131,9 @@ textarea {
 	
 }
 
+#content,
 .container {
-	max-width: 1200px;
+	max-width: 1152px;
 	@include span(100%);
 	margin: 0 auto;
 	float: none;

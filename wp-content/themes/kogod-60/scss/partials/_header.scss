@@ -16,9 +16,82 @@
   
   body.admin-bar & {
     top: 32px;
+
+    @media screen and (max-width: 782px) {
+      top: 46px;      
+    }
   }
 }
 
-header {
-  @include span(5);
+header#page-header {
+  margin-top: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: relative;
+
+  background-image: url(../img/background-header-1920x1269.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  color: $white;
+
+  // Homepage specific header styles
+  body.home & {
+    padding-top: 20%;
+    padding-bottom: 20%;
+  }
+
+  #branding {
+    text-align: center;
+    display: none; // Only display branding on homepage
+    body.home & {
+      display: block;
+    }
+  }
+  h1,
+  h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  h2 {
+    @include font-family-garamond(300);
+    font-style: italic;
+    font-size: $medium;
+  }
+
+  nav {
+    width: 100%;
+
+    body.home & {
+      position: absolute;
+      top: 20px;
+    }
+
+    @include font-family-interstate(500);
+    font-size: $default;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      
+      list-style-type: none;
+      text-align: center;
+    }
+    li {
+      display: inline-block;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+    a {
+      padding: 5px;
+      color: $white;
+      text-decoration: none;
+      text-shadow: 1px 1px 5px $black-50;
+
+      &:hover {
+        padding-top: 3px;
+        text-shadow: 1px 2px 5px $black;
+      }
+    }
+  }
 }

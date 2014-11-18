@@ -57,3 +57,49 @@ function blankslate_comments_number($count) {
 	return $count;
 }
 }
+
+//
+//	CUSTOM POSTS
+//
+//	TIMELINE EVENTS
+add_action('init', 'timeline_events_custom_post'); // Add our HTML5 Blank Custom Post Type
+function timeline_events_custom_post()
+{
+	register_taxonomy_for_object_type('category', 'timeline-events'); // Register Taxonomies for Category
+	register_taxonomy_for_object_type('post_tag', 'timeline-events');
+	register_post_type('timeline-events', // Register Custom Post Type
+		array(
+		'labels' => array(
+			'name' => __('Timeline Events', 'timeline_events'), // Rename these to suit
+			'singular_name' => __('Timeline Events', 'timeline_events'),
+			'add_new' => __('Add New Event', 'timeline_events'),
+			'add_new_item' => __('Add New Event', 'timeline_events'),
+			'edit' => __('Edit', 'timeline_events'),
+			'edit_item' => __('Edit Event', 'timeline_events'),
+			'new_item' => __('New Event', 'timeline_events'),
+			'view' => __('View Event', 'timeline_events'),
+			'view_item' => __('View Event', 'timeline_events'),
+			'search_items' => __('Search Events', 'timeline_events'),
+			'not_found' => __('No events found', 'timeline_events'),
+			'not_found_in_trash' => __('No events found in Trash', 'timeline_events')
+		),
+		'public' => true,
+		'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+		'has_archive' => true,
+		'supports' => array(
+			'title',
+			'editor',
+			'excerpt',
+			'thumbnail',
+			'excerpt',
+			'revisions',
+			'comments',
+		), // Go to Dashboard Custom HTML5 Blank post for supports
+		'can_export' => true, // Allows export in Tools > Export
+		'taxonomies' => array(
+ 			'post_tag',
+ 			'category'
+ 		) // Add Category and Post Tags support
+	));
+	// flush_rewrite_rules();
+}	

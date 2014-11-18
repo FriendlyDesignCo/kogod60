@@ -1,0 +1,136 @@
+/*
+==========================================================================
+  TIMELINE (scss/partials/_timeline.scss)
+==========================================================================
+*/
+
+#timeline {
+  background: url(../img/background-diag-line-repeat-trans-16x8.gif);
+  background-repeat: repeat-y;
+  background-position: top center;
+  background-size: 8px 4px;
+
+  menu.filter {
+    > div {
+      background-color: $white;
+      background-image: url(../img/background-diag-line-repeat-8x16.gif);
+      background-size: 4px 8px;
+      background-repeat: repeat-x;
+      background-position: bottom center;
+    }
+
+    h6 {
+      display: inline;
+      margin: 0;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      float: left;
+
+      background: $white-60;
+      @include font-family-interstate(900);
+      @include font-size-small;
+      text-transform: uppercase;
+    }
+
+    ul {
+      margin: 0;
+      padding: 30px 0 0;
+
+      @include font-family-interstate(300);
+      @include font-size-small;
+      list-style-type: none;
+      display: inline-block;
+      float: right;
+    }
+    li {
+      display: inline;
+      margin-left: -4px;
+    }
+    a {
+      padding: 30px 15px 32px;
+
+      background: $white-60;
+      color: $red;
+
+      &:hover {
+        color: $blue;
+      }
+
+      &.active {
+        background: none;
+        color: $black;
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+  }
+
+  .event {
+    margin-top: 80px;
+    margin-bottom: 80px;
+
+    // Column widths
+    @include media-query(mobile) {
+      @include span(100%);
+    }
+    @include media-query(tablet-and-larger) {
+      @include span(58%);
+      &:nth-child(3n+1) {
+        @include span(42%);
+      }
+    }
+    
+    // Default styling
+    h3 {
+      @include span(70% no-gutters);
+      @include font-size-default;
+      font-weight: 300;
+
+      a {
+        color: $black;
+
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+    h4 {
+      @include span(30%);
+      margin: 1em 0;
+
+      font-weight: 500;
+      @include font-size-default;
+    }
+    p {
+      @include span(70% no-gutters);
+      margin: 0;
+    }
+    .event__image {
+      width: 100%;
+    }
+
+    // Modifications to default styling for columns
+    @include media-query(tablet-and-larger) {
+      &:nth-child(odd) {
+        text-align: right;
+        h4 {
+          text-align: left;
+          padding-left: 20px;
+        }
+      }
+
+      &:nth-child(even) {
+        h3,
+        p {
+          float: right;
+        }
+        h4 {
+          padding-right: 20px;
+          float: left;
+          text-align: right;
+        }
+      }
+    }
+  }
+}

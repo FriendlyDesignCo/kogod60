@@ -16,43 +16,71 @@
 // 	text-decoration: none;
 // 	text-shadow: none;
 // }
-@mixin font-family-helvetica ($weight) {
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@mixin font-family-interstate ($weight) {
+	font-family: Interstate, Helvetica, Arial, sans-serif;
  	font-weight: $weight;
+}
+
+@mixin font-family-garamond ($weight) {
+	font-family: "Adobe Garamond Pro", Georgia, Times, serif;
 }
 
 //
 //	FONT SIZES
 //
-$huge: 36px;
-$large: 28px;
-$medium: 24px;
-$default: 18px;
-$small: 14px;
-$tiny: 12px;
+$huge: 106px;
+$large: 50px;
+$medium: 37px;
+$default: 21px;
+$small: 18px;
+$tiny: 14px;
 @mixin font-size-huge {
 	font-size: $huge;
 	line-height: $huge * 1.25;
+	@include media-query('mobile') {
+		font-size: $huge * .75;
+		line-height: ($huge * 1.25) * .75;
+	}
 }
 @mixin font-size-large {
 	font-size: $large;
 	line-height: $large * 1.25;
+	@include media-query('mobile') {
+		font-size: $large * .75;
+		line-height: ($large * 1.25) * .75;
+	}
 }
 @mixin font-size-medium {
 	font-size: $medium;
 	line-height: $medium * 1.25;
+	@include media-query('mobile') {
+		font-size: $medium * .75;
+		line-height: ($medium * 1.25) * .75;
+	}
 }
 @mixin font-size-default {
 	font-size: $default;
 	line-height: $default * 1.25;
+	@include media-query('mobile') {
+		font-size: $default * .75;
+		line-height: ($default * 1.25) * .75;
+	}
 }
 @mixin font-size-small {
 	font-size: $small;
 	line-height: $small * 1.25;
+	@include media-query('mobile') {
+		font-size: $small * .75;
+		line-height: ($small * 1.25) * .75;
+	}
 }
 @mixin font-size-tiny {
 	font-size: $tiny;
 	line-height: $tiny * 1.25;
+	@include media-query('mobile') {
+		font-size: $tiny * .75;
+		line-height: ($tiny * 1.25) * .75;
+	}
 }
 
 //

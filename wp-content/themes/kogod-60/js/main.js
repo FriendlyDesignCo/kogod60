@@ -93,7 +93,7 @@ var cs = (function($) {
 			// });
 
 			// FUNCTIONS
-			// uiMod.example();
+			uiMod.setFilterHeadlineWidth();
 
 			
 			// REPEATING FUNCTIONS
@@ -115,6 +115,7 @@ var cs = (function($) {
 
 		var resize = function() { // Called when the browser window is resized
 			// Functions
+			uiMod.setFilterHeadlineWidth();
 		};
 
 		var responsiveState = function(req) { // Returns what responsive state we're at. Values based on CSS media queries.
@@ -164,13 +165,23 @@ var cs = (function($) {
 
 	var uiMod = (function() {
 
-		var heightMatcher = function() { // Matches the height of various elements to other elements in ways that are impossible with CSS alone
+		var setFilterHeadlineWidth = function() {
+			// 1. Gather widths
+			var navWidth = $('.filter ul').outerWidth();
+			console.log(navWidth);
+			var containerWidth = $('.filter > div ').outerWidth();
 			
+			// 2. Determine new width for headline based on total div width - ul width
+			var newHeadlineWidth = containerWidth - navWidth - 4; // 4 to accomodate for negative margin on li's
+			console.log(newHeadlineWidth);
+
+			// 3. Set new weidth on headline
+			$('.filter h6').css({"width":newHeadlineWidth});
 		};
 
 		// public
 		return {
-			heightMatcher: heightMatcher
+			setFilterHeadlineWidth: setFilterHeadlineWidth
 		};
 	})(); // var uiMod = (function() {
 

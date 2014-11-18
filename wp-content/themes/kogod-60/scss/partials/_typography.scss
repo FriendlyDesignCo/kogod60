@@ -5,44 +5,57 @@
 */
 
 h1 {
-    @include font-family-helvetica (700);
+    @include font-family-interstate (700);
     @include font-size-huge;
+    text-transform: uppercase;
     b, strong {
-        @include font-family-helvetica (1000);
+        @include font-family-interstate (1000);
     }
 }
 h2 {
-    @include font-family-helvetica (300);
-    @include font-size-huge;
+    @include font-family-interstate (300);
+    @include font-size-large;
     b, strong {
-        @include font-family-helvetica (700);
+        @include font-family-interstate (700);
     }
 }
 h3 {
-    @include font-family-helvetica (700);
+    @include font-family-interstate (700);
     @include font-size-large;
     b, strong {
-        @include font-family-helvetica (1000);
+        @include font-family-interstate (1000);
     }
 }
 h4 {
-    @include font-family-helvetica (300);
+    @include font-family-interstate (300);
     @include font-size-large;
     b, strong {
-        @include font-family-helvetica (700);
+        @include font-family-interstate (700);
     }
 }
 h5 {
-    @include font-family-helvetica (700);
+    @include font-family-interstate (700);
     @include font-size-medium;
     b, strong {
-        @include font-family-helvetica (1000);
+        @include font-family-interstate (1000);
     }
 }
 h6 {
-    @include font-family-helvetica (300);
+    @include font-family-interstate (300);
     @include font-size-medium;
     b, strong {
-        @include font-family-helvetica (700);
+        @include font-family-interstate (700);
     }
+}
+
+.description__text {
+  h1, h2 {
+    @include font-size-medium;
+  }
+  h3, h4 {
+    @include font-size-default;
+  }
+  h5, h6 {
+    @include font-size-small; 
+  }
 }
