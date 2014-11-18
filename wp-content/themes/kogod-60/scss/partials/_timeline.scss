@@ -12,6 +12,7 @@
 
   menu.filter {
     > div {
+      position: relative;
       background-color: $white;
       background-image: url(../img/background-diag-line-repeat-8x16.gif);
       background-size: 4px 8px;
@@ -45,6 +46,10 @@
     li {
       display: inline;
       margin-left: -4px;
+
+      &.toggle {
+        display: none;
+      }
     }
     a {
       padding: 30px 15px 32px;
@@ -64,6 +69,54 @@
         }
       }
     }
+
+    // Mobile responsive state (mimics a <select>)
+    @media screen and (max-width: 890px) {
+      h6 {
+        background: none;
+      }
+      .hide {
+        display: none;
+      }
+      ul {
+        width: 200px;
+        padding-top: 0;
+        margin-top: 22px;
+        max-width: 45%;
+
+        border: 1px solid $black-20;
+        background: $white;
+        position: absolute;
+      }
+      li {
+        display: block;
+        margin: 0;
+        border-top: 1px solid $black-20;
+
+        &.toggle {
+          display: block;
+          
+          border: 0;
+          background-image: url(../img/ui-dn-arr-27x14.gif);
+          background-repeat: no-repeat;
+          background-size: 13px 7px;
+          background-position: 90% center;
+          cursor: pointer;
+        }
+      }
+      a {
+        display: block;
+        padding: 7px 10px;
+        background: none;
+        &:hover {
+          background: $black-05;
+          color: $black;
+        }
+        &.active:hover {
+          color: $black;
+        }
+      }
+    }
   }
 
   .event {
@@ -76,7 +129,7 @@
     }
     @include media-query(tablet-and-larger) {
       @include span(58%);
-      &:nth-child(3n+1) {
+      &:nth-of-type(3n+1) {
         @include span(42%);
       }
     }
@@ -112,7 +165,7 @@
 
     // Modifications to default styling for columns
     @include media-query(tablet-and-larger) {
-      &:nth-child(odd) {
+      &:nth-of-type(odd) {
         text-align: right;
         h4 {
           text-align: left;
@@ -120,7 +173,7 @@
         }
       }
 
-      &:nth-child(even) {
+      &:nth-of-type(even) {
         h3,
         p {
           float: right;

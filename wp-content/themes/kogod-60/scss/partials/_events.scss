@@ -1,0 +1,205 @@
+/*
+==========================================================================
+  EVENTS (scss/partials/_events.scss)
+==========================================================================
+*/
+body.page-template-template-events-php {
+  
+  .events > header,
+  .getInvolved > header {
+    text-align: center;
+    margin-top: 60px;
+
+    h1, 
+    h4 {
+      margin: 0;
+      text-transform: uppercase;
+    }
+    
+    h1 {  
+      @include font-size-large;
+      line-height: 1;
+    }
+    h4 {
+      @include font-family-interstate(900);
+      font-size: $medium - 7;
+      @include media-query('mobile') {
+        font-size: ($medium - 7) * .75;
+      }
+    }
+  }
+
+  .events .hr {
+    margin-bottom: 0;
+    background-position: 0 -2px;
+  }
+
+  // Events section
+  .feedContainer {
+    padding-top: 45px;
+    clear: both;
+    
+    @include media-query(tablet-and-larger) {
+      background: url(../img/background-diag-line-repeat-trans-16x8.gif);
+      background-repeat: repeat-y;
+      background-position: top center;
+      background-size: 8px 4px;
+    }
+  }
+
+  .feed {
+    @include span(45%);
+
+    &:nth-of-type(2) {
+      float: right;
+    }
+
+    @include media-query(mobile) {
+      @include span(100%);
+      float: none;
+    }
+
+    .feed__title {
+      margin-top: 0;
+
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    article {
+      clear: both;
+      margin-bottom: 40px;
+
+      .date {
+        display: block;
+        width: 65px;
+        margin-right: 15px;
+        float: left;
+
+        border: 2px solid $black;
+        @include font-family-interstate(900);
+
+        @include media-query(mobile) {
+          width: 55px;
+        }
+
+        .day {
+          padding: 0 5px;
+          @include font-size-medium;
+          display: block;
+          text-align: center;
+        }
+        .month {
+          display: block;
+          padding: 5px 0;
+          
+          background: $black;
+          color: $white;
+          font-weight: 400;
+          text-align: center;
+          text-transform: uppercase;
+        }
+      }
+    
+      h4 {
+        margin: 0;
+      }
+
+      h4,
+      p {
+        width: calc(100% - 80px);
+        float: right;
+
+        @include media-query(mobile) {
+          width: calc(100% - 70px);
+        }
+      }
+    }
+  }
+
+  // Get Involved section
+  .contentBlock {
+    @include span(50%);
+    margin-bottom: 40px;
+
+    @include media-query(mobile) {
+      @include span(100%);
+    }
+
+    &:nth-of-type(odd) {
+      clear: both;
+    }
+
+    h4:first-of-type {
+      margin: 0;
+    }
+
+    .thumbnail {
+      width: 25%;
+      height: auto;
+      float: left;
+    }
+    
+    &.wayToGetInvolved {
+      h4:first-of-type,
+      .description,
+      .learnMore {
+        width: calc(75% - 15px);
+        float: right;
+      }
+    }
+  }
+
+
+  // .description {
+    
+  //   &.hasImages {
+  //     .description__text {
+  //       @include media-query('mobile') {
+  //         @include span(100%);  
+  //       }
+  //       @include media-query('tablet-and-larger') {
+  //         @include span(50%);
+  //       }
+
+  //       *:first-child {
+  //         margin-top: 0;
+  //       }
+  //     }
+  //     .description__images {
+  //       @include media-query('mobile') {
+  //         @include span(100%);  
+  //       }
+  //       @include media-query('tablet-and-larger') {
+  //         @include span(50%);
+  //       }
+  //     }
+  //   }
+    
+  //   &.noImages {
+  //     .description__text {
+  //       @include media-query('mobile') {
+  //         @include span(100%);  
+  //       }
+  //       @include media-query('tablet-and-larger') {
+  //         @include span(70%);
+  //         margin: 0 auto;
+  //         float: none;
+  //       }
+  //     }
+  //   }
+
+  //   .image {
+  //     margin-bottom: 40px;
+
+  //     p {
+  //       font-style: italic;
+  //       color: $black-50;
+  //     }
+  //   }
+  //   img {
+  //     width: 100%;
+  //     height: auto;
+  //   }
+  // }
+}

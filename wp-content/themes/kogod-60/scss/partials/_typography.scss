@@ -48,7 +48,9 @@ h6 {
     }
 }
 
-.description__text {
+.description__text,
+.contentBlock,
+.feed {
   h1, h2 {
     @include font-size-medium;
   }

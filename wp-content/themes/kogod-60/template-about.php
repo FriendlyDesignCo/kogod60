@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php 
+/*
+Template Name: About template
+*/
+get_header(); ?>
 <section id="content" role="main">
 
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -7,7 +11,8 @@
 
     <?php
       // Setup basic post data for the page
-      $description = get_field('event_description_long');
+      $mainHeadline = get_field('headline');
+      $mainContent = get_field('main_content');
       $featuredImagesBoolean = get_field('featured_images_boolean');
       $featuredImage1 = get_field('featured_image_1');
       $caption1 = get_field('caption_1');
@@ -16,22 +21,20 @@
       // Flexible content is not stored in variables, but is rather performed as a loop within the page content below.
     ?>
     <header>
-      <h4><?php the_date('Y'); ?></h4>
-      <h1><?php the_title(); ?></h1>
+      <h1>
+        <?php if ($mainHeadline) {
+          echo $mainHeadline;
+        } else {
+          the_title();
+        }
+        ?>
+      </h1>
+      <div class="hr"></div>
     </header>
-
-    <nav class="pagination">
-      
-      <ul>
-        <li class="prev"><?php previous_post_link('%link', '&laquo; Previous<span> Event</span>'); ?></li>
-        <li><a href="<?php bloginfo('url'); ?>">Back to Timeline</a></li>
-        <li class="next"><?php next_post_link('%link', 'Next <span>Event </span>&raquo;'); ?></li>
-      </ul>
-    </nav>
 
     <section class="description<?php if ($featuredImagesBoolean ==='Yes') { echo ' hasImages'; } else { echo ' noImages'; } ?>">
       <div class="description__text">
-        <?php echo $description; ?>
+        <?php echo $mainContent; ?>
       </div>
       <?php if ($featuredImagesBoolean === 'Yes') { ?>
         <div class="description__images">

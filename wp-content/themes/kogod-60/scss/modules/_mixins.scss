@@ -62,24 +62,24 @@ $tiny: 14px;
 	font-size: $default;
 	line-height: $default * 1.25;
 	@include media-query('mobile') {
-		font-size: $default * .75;
-		line-height: ($default * 1.25) * .75;
+		font-size: $default * .9;
+		line-height: ($default * 1.25) * .9;
 	}
 }
 @mixin font-size-small {
 	font-size: $small;
 	line-height: $small * 1.25;
 	@include media-query('mobile') {
-		font-size: $small * .75;
-		line-height: ($small * 1.25) * .75;
+		font-size: $small * .9;
+		line-height: ($small * 1.25) * .9;
 	}
 }
 @mixin font-size-tiny {
 	font-size: $tiny;
 	line-height: $tiny * 1.25;
 	@include media-query('mobile') {
-		font-size: $tiny * .75;
-		line-height: ($tiny * 1.25) * .75;
+		font-size: $tiny * .9;
+		line-height: ($tiny * 1.25) * .9;
 	}
 }
 

@@ -8,10 +8,13 @@
 						<div>
 							<h6>Explore 60 years of:</h6>
 							<ul>
-								<li><a href="#">Milestones</a></li>
-								<li><a href="#">Pioneering Education</a></li>
-								<li><a href="#">People of Kogod</a></li>
-								<li><a class="active" href="#">View All</a></li>
+								<li class="toggle"><a>View All</a></li>
+								<div class="hide">
+									<li><a href="#">Milestones</a></li>
+									<li><a href="#">Pioneering Education</a></li>
+									<li><a href="#">People of Kogod</a></li>
+									<li><a class="active" href="#">View All</a></li>
+								</div>
 							</ul>
 							<div class="clearfix"></div>
 						<div>
@@ -22,7 +25,8 @@
 						//	DEFINE WP_QUERY TO GRAB TIMELINE EVENT POSTS
 						//
 						$query = new WP_Query(array(
-							'post_type' => 'timeline-events'
+							'post_type' => 'timeline-events',
+							'order' => 'ASC'
 						)); ?>
 
 					<?php if ( $query->have_posts() ) : ?>
