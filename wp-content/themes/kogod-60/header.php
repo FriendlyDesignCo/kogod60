@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title><?php wp_title(' | ', true, 'right'); ?></title>
 		
-		<link type="text/css" rel="stylesheet" href="http://fast.fonts.com/cssapi/814c7287-9775-4a7e-9046-aac659890974.css"/>
+		<link href="//cloud.webtype.com/css/14f03714-0492-43a1-b347-c229c03a169d.css" rel="stylesheet" type="text/css" /> <!-- Interstate -->
 		<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
 
 		<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
@@ -24,7 +24,7 @@
 
 			<div class="auBar">
 				<div class="container">
-					<p>AU Kogod logo goes here</p>
+					<a href="http://www.american.edu/kogod/"></a>
 				</div>
 			</div>
 		

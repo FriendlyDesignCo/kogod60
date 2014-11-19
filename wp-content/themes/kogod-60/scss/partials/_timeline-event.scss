@@ -9,6 +9,10 @@ article.timeline-events {
     text-align: center;
     margin-top: 60px;
 
+    @include media-query(mobile) {
+      margin-top: 30px;
+    }
+
     h1, 
     h4 {
       margin: 0;
@@ -20,7 +24,7 @@ article.timeline-events {
       line-height: 1;
     }
     h4 {
-      @include font-family-interstate(900);
+      @include font-family-interstate-bold;
       font-size: $medium - 7;
       @include media-query('mobile') {
         font-size: ($medium - 7) * .75;
@@ -31,6 +35,10 @@ article.timeline-events {
   .pagination {
     @include span(100%);
     margin: 65px 0;
+
+    @include media-query(mobile) {
+      margin: 35px 0;
+    }
 
     ul {
       height: 15px;
@@ -71,7 +79,7 @@ article.timeline-events {
       top: -1px;
 
       background: $white;
-      @include font-family-interstate(300);
+      @include font-family-interstate-light;
       font-size: $tiny;
 
       span {
@@ -123,6 +131,10 @@ article.timeline-events {
     .image {
       margin-bottom: 40px;
 
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
       p {
         font-style: italic;
         color: $black-50;
@@ -136,7 +148,7 @@ article.timeline-events {
 
   .video,
   .gallery {
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
     
     header {
       margin-top: 0;

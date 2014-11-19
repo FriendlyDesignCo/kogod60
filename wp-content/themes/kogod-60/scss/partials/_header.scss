@@ -6,6 +6,7 @@
 
 .auBar {
   height: 50px;
+  padding-top: 13px;
   position: absolute;
   top: 0;
   right: 0;
@@ -13,6 +14,16 @@
 
   background: $black;
   color: $white;
+
+  a {
+    display: block;
+    width: 205px;
+    height: 23px;
+
+    background-image: url(../img/logo-kogod-white-410x46.png);
+    background-repeat: none;
+    background-size: 100% 100%;
+  }
   
   body.admin-bar & {
     top: 32px;
@@ -35,10 +46,15 @@ header#page-header {
   background-position: center top;
   color: $white;
 
+  @include media-query(mobile) {
+    background-position: center 30%;
+  }
+
   // Homepage specific header styles
   body.home & {
     padding-top: 20%;
     padding-bottom: 20%;
+    background-position: center top;
   }
 
   #branding {
@@ -57,6 +73,10 @@ header#page-header {
     @include font-family-garamond(300);
     font-style: italic;
     font-size: $medium;
+
+    @include media-query(mobile) {
+      font-size: $default + 6;
+    }
   }
 
   nav {
@@ -67,8 +87,12 @@ header#page-header {
       top: 20px;
     }
 
-    @include font-family-interstate(500);
+    @include font-family-interstate-regular;
     font-size: $default;
+
+    @include media-query(mobile) {
+      font-size: $tiny - 2;
+    }
 
     ul {
       margin: 0;
@@ -81,6 +105,16 @@ header#page-header {
       display: inline-block;
       margin-right: 10px;
       margin-left: 10px;
+
+      &.current-menu-item,
+      &.current_page_item {
+        opacity: .5;
+      }
+
+      @include media-query(mobile) {
+        margin-right: 5px;
+        margin-left: 5px;
+      }
     }
     a {
       padding: 5px;

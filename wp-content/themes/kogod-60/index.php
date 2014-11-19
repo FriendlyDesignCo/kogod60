@@ -61,6 +61,7 @@
 					<?php endif; ?>
 
 					<div class="clearfix"></div>
+					<a class="button" href="<? bloginfo('url'); ?>/events/">Learn more about 60th Events and&nbsp;Opportunities</a>
 				</section> <!-- #timeline.container -->
 
 				<!-- END TIMELINE -->

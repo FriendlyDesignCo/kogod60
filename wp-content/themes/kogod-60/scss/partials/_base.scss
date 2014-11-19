@@ -25,6 +25,20 @@ html, body {
 body {
 	@include font-family-garamond(300);
 }
+
+#wrapper {
+	
+}
+
+#content,
+.container {
+	max-width: 1060px;
+	@include span(100%);
+	margin: 0 auto;
+	float: none;
+}
+
+
 a {
 	text-decoration: none;
 	color: $blue;
@@ -76,8 +90,12 @@ hr {
 	background-image: url('../img/background-diag-line-repeat-8x8.gif');
 	background-size: 4px 4px;
 
+	@include media-query(mobile) {
+		margin: 35px 0;
+	}
+
 	&.trans {
-		opacity: .4;
+		background-image: url('../img/background-diag-line-repeat-trans-8x8.gif');
 	}
 }
 
@@ -127,18 +145,21 @@ textarea {
 	resize: vertical;
 }
 
-#wrapper {
-	
+.button {
+	display: inline-block;
+	padding: 7px 10px 5px;
+
+	background: $red;
+	color: $white;
+
+	&:hover {
+		background: $blue;
+		color: $white;
+	}
 }
 
-#content,
-.container {
-	max-width: 1060px;
-	@include span(100%);
-	margin: 0 auto;
-	float: none;
-}
 
+// Toolbox
 .fill { // Fill items (usually links that need to take up 100% of their parent)
 	width: 100%;
 	height: 100%;

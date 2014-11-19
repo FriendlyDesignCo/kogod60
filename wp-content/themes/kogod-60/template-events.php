@@ -17,7 +17,9 @@ get_header(); ?>
     <section class="events">
       <header>
         <h1><?php echo $eventsHeadline; ?></h1>
-        <div class="hr trans"></div>
+        <div class="hr trans">
+          <a class="button" href="#get-involved">Get Involved at Kogod</a>
+        </div>
       </header>
       
       <div class="feedContainer">
@@ -111,7 +113,7 @@ get_header(); ?>
       </div>
     </section> <!-- .events -->
 
-    <section class="getInvolved">
+    <section id="get-involved" class="getInvolved">
       <header>
         <h1><?php echo $involvedHeadline; ?></h1>
         <div class="hr trans"></div>
@@ -132,8 +134,10 @@ get_header(); ?>
           elseif( get_row_layout() == 'way_to_get_involved_block' ):
       ?>
       <div class="contentBlock wayToGetInvolved">
-        <?php if (get_sub_field('image')) { ?>
-          <img class="thumbnail" src="<?php echo get_sub_field('image')['sizes']['thumbnail']; ?>" />
+        <?php if (get_sub_field('image')) {
+          $image = get_sub_field('image');
+        ?>
+          <img class="thumbnail" src="<?php echo $image['sizes']['thumbnail']; ?>" />
         <?php } ?>
         <?php if (get_sub_field('url')) { ?>
           <h4>

@@ -364,6 +364,19 @@ textarea {
 body {
   font-family: "Adobe Garamond Pro", Georgia, Times, serif; }
 
+#content,
+.container {
+  max-width: 1060px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  float: left;
+  padding-left: 2.38095%;
+  padding-right: 2.38095%;
+  margin: 0 auto;
+  float: none; }
+
 a {
   text-decoration: none;
   color: #65aec0; }
@@ -417,8 +430,11 @@ hr {
   margin: 45px 0;
   background-image: url("../img/background-diag-line-repeat-8x8.gif");
   background-size: 4px 4px; }
+  @media only screen and (max-width: 768px) {
+    .hr {
+      margin: 35px 0; } }
   .hr.trans {
-    opacity: .4; }
+    background-image: url("../img/background-diag-line-repeat-trans-8x8.gif"); }
 
 audio,
 canvas,
@@ -460,18 +476,14 @@ input[type=text], textarea, select {
 textarea {
   resize: vertical; }
 
-#content,
-.container {
-  max-width: 1060px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 100%;
-  float: left;
-  padding-left: 2.38095%;
-  padding-right: 2.38095%;
-  margin: 0 auto;
-  float: none; }
+.button {
+  display: inline-block;
+  padding: 7px 10px 5px;
+  background: #cf1f2e;
+  color: #fff; }
+  .button:hover {
+    background: #65aec0;
+    color: #fff; }
 
 .fill {
   width: 100%;
@@ -501,60 +513,69 @@ textarea {
 */
 h1 {
   font-family: Interstate, Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-style: normal;
+  font-weight: bold;
   font-size: 106px;
   line-height: 132.5px;
   text-transform: uppercase; }
   @media only screen and (max-width: 768px) {
     h1 {
-      font-size: 79.5px;
-      line-height: 99.375px; } }
+      font-size: 53px;
+      line-height: 66.25px; } }
   h1 b, h1 strong {
     font-family: Interstate, Helvetica, Arial, sans-serif;
-    font-weight: 1000; }
+    font-style: normal;
+    font-weight: bold; }
 
 h2 {
-  font-family: Interstate, Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-family: "Interstate Light", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
   font-size: 50px;
   line-height: 62.5px; }
   @media only screen and (max-width: 768px) {
     h2 {
-      font-size: 37.5px;
-      line-height: 46.875px; } }
+      font-size: 25px;
+      line-height: 31.25px; } }
   h2 b, h2 strong {
     font-family: Interstate, Helvetica, Arial, sans-serif;
-    font-weight: 700; }
+    font-style: normal;
+    font-weight: normal; }
 
 h3 {
   font-family: Interstate, Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-style: normal;
+  font-weight: bold;
   font-size: 50px;
   line-height: 62.5px; }
   @media only screen and (max-width: 768px) {
     h3 {
-      font-size: 37.5px;
-      line-height: 46.875px; } }
+      font-size: 25px;
+      line-height: 31.25px; } }
   h3 b, h3 strong {
     font-family: Interstate, Helvetica, Arial, sans-serif;
-    font-weight: 1000; }
+    font-style: normal;
+    font-weight: bold; }
 
 h4 {
-  font-family: Interstate, Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-family: "Interstate Light", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
   font-size: 50px;
   line-height: 62.5px; }
   @media only screen and (max-width: 768px) {
     h4 {
-      font-size: 37.5px;
-      line-height: 46.875px; } }
+      font-size: 25px;
+      line-height: 31.25px; } }
   h4 b, h4 strong {
     font-family: Interstate, Helvetica, Arial, sans-serif;
-    font-weight: 700; }
+    font-style: normal;
+    font-weight: normal; }
 
 h5 {
   font-family: Interstate, Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-style: normal;
+  font-weight: normal;
   font-size: 37px;
   line-height: 46.25px; }
   @media only screen and (max-width: 768px) {
@@ -563,11 +584,13 @@ h5 {
       line-height: 34.6875px; } }
   h5 b, h5 strong {
     font-family: Interstate, Helvetica, Arial, sans-serif;
-    font-weight: 1000; }
+    font-style: normal;
+    font-weight: bold; }
 
 h6 {
-  font-family: Interstate, Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-family: "Interstate Light", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
   font-size: 37px;
   line-height: 46.25px; }
   @media only screen and (max-width: 768px) {
@@ -576,7 +599,8 @@ h6 {
       line-height: 34.6875px; } }
   h6 b, h6 strong {
     font-family: Interstate, Helvetica, Arial, sans-serif;
-    font-weight: 700; }
+    font-style: normal;
+    font-weight: normal; }
 
 .description__text h1, .description__text h2,
 .contentBlock h1,
@@ -631,12 +655,20 @@ h6 {
 */
 .auBar {
   height: 50px;
+  padding-top: 13px;
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
   background: #000;
   color: #fff; }
+  .auBar a {
+    display: block;
+    width: 205px;
+    height: 23px;
+    background-image: url(../img/logo-kogod-white-410x46.png);
+    background-repeat: none;
+    background-size: 100% 100%; }
   body.admin-bar .auBar {
     top: 32px; }
     @media screen and (max-width: 782px) {
@@ -653,9 +685,13 @@ header#page-header {
   background-size: cover;
   background-position: center top;
   color: #fff; }
+  @media only screen and (max-width: 768px) {
+    header#page-header {
+      background-position: center 30%; } }
   body.home header#page-header {
     padding-top: 20%;
-    padding-bottom: 20%; }
+    padding-bottom: 20%;
+    background-position: center top; }
   header#page-header #branding {
     text-align: center;
     display: none; }
@@ -669,14 +705,21 @@ header#page-header {
     font-family: "Adobe Garamond Pro", Georgia, Times, serif;
     font-style: italic;
     font-size: 37px; }
+    @media only screen and (max-width: 768px) {
+      header#page-header h2 {
+        font-size: 27px; } }
   header#page-header nav {
     width: 100%;
     font-family: Interstate, Helvetica, Arial, sans-serif;
-    font-weight: 500;
+    font-style: normal;
+    font-weight: normal;
     font-size: 21px; }
     body.home header#page-header nav {
       position: absolute;
       top: 20px; }
+    @media only screen and (max-width: 768px) {
+      header#page-header nav {
+        font-size: 12px; } }
     header#page-header nav ul {
       margin: 0;
       padding: 0;
@@ -686,6 +729,12 @@ header#page-header {
       display: inline-block;
       margin-right: 10px;
       margin-left: 10px; }
+      header#page-header nav li.current-menu-item, header#page-header nav li.current_page_item {
+        opacity: .5; }
+      @media only screen and (max-width: 768px) {
+        header#page-header nav li {
+          margin-right: 5px;
+          margin-left: 5px; } }
     header#page-header nav a {
       padding: 5px;
       color: #fff;
@@ -704,97 +753,129 @@ header#page-header {
   background: url(../img/background-diag-line-repeat-trans-16x8.gif);
   background-repeat: repeat-y;
   background-position: top center;
-  background-size: 8px 4px; }
-  #timeline menu.filter > div {
-    position: relative;
-    background-color: #fff;
-    background-image: url(../img/background-diag-line-repeat-8x16.gif);
-    background-size: 4px 8px;
-    background-repeat: repeat-x;
-    background-position: bottom center; }
-  #timeline menu.filter h6 {
-    display: inline;
-    margin: 0;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    float: left;
-    background: rgba(255, 255, 255, 0.6);
-    font-family: Interstate, Helvetica, Arial, sans-serif;
-    font-weight: 900;
-    font-size: 18px;
-    line-height: 22.5px;
-    text-transform: uppercase; }
-    @media only screen and (max-width: 768px) {
-      #timeline menu.filter h6 {
-        font-size: 16.2px;
-        line-height: 20.25px; } }
-  #timeline menu.filter ul {
-    margin: 0;
-    padding: 30px 0 0;
-    font-family: Interstate, Helvetica, Arial, sans-serif;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 22.5px;
-    list-style-type: none;
-    display: inline-block;
-    float: right; }
-    @media only screen and (max-width: 768px) {
-      #timeline menu.filter ul {
-        font-size: 16.2px;
-        line-height: 20.25px; } }
-  #timeline menu.filter li {
-    display: inline;
-    margin-left: -4px; }
-    #timeline menu.filter li.toggle {
-      display: none; }
-  #timeline menu.filter a {
-    padding: 30px 15px 32px;
-    background: rgba(255, 255, 255, 0.6);
-    color: #cf1f2e; }
-    #timeline menu.filter a:hover {
-      color: #65aec0; }
-    #timeline menu.filter a.active {
-      background: none;
-      color: #000; }
-      #timeline menu.filter a.active:hover {
-        color: #65aec0; }
-  @media screen and (max-width: 890px) {
+  background-size: 8px 4px;
+  text-align: center; }
+  #timeline menu.filter {
+    text-align: left; }
+    #timeline menu.filter > div {
+      position: relative;
+      background-color: #fff;
+      background-image: url(../img/background-diag-line-repeat-8x16.gif);
+      background-size: 4px 8px;
+      background-repeat: repeat-x;
+      background-position: bottom center; }
     #timeline menu.filter h6 {
-      background: none; }
-    #timeline menu.filter .hide {
-      display: none; }
-    #timeline menu.filter ul {
-      width: 200px;
-      padding-top: 0;
-      margin-top: 22px;
-      max-width: 45%;
-      border: 1px solid rgba(0, 0, 0, 0.2);
-      background: #fff;
-      position: absolute; }
-    #timeline menu.filter li {
-      display: block;
+      display: inline;
       margin: 0;
-      border-top: 1px solid rgba(0, 0, 0, 0.2); }
+      padding-top: 30px;
+      padding-bottom: 30px;
+      float: left;
+      background: rgba(255, 255, 255, 0.6);
+      font-family: Interstate, Helvetica, Arial, sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 22.5px;
+      text-transform: uppercase; }
+      @media only screen and (max-width: 768px) {
+        #timeline menu.filter h6 {
+          font-size: 16.2px;
+          line-height: 20.25px; } }
+      @media only screen and (max-width: 768px) {
+        #timeline menu.filter h6 {
+          font-size: 14px;
+          line-height: 17.5px; } }
+  @media only screen and (max-width: 768px) and (max-width: 768px) {
+    #timeline menu.filter h6 {
+      font-size: 12.6px;
+      line-height: 15.75px; } }
+
+    #timeline menu.filter ul {
+      margin: 0;
+      padding: 30px 0 0;
+      font-family: "Interstate Light", Helvetica, Arial, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 22.5px;
+      list-style-type: none;
+      display: inline-block;
+      float: right; }
+      @media only screen and (max-width: 768px) {
+        #timeline menu.filter ul {
+          font-size: 16.2px;
+          line-height: 20.25px; } }
+      @media only screen and (max-width: 768px) {
+        #timeline menu.filter ul {
+          font-size: 14px;
+          line-height: 17.5px; } }
+  @media only screen and (max-width: 768px) and (max-width: 768px) {
+    #timeline menu.filter ul {
+      font-size: 12.6px;
+      line-height: 15.75px; } }
+
+    #timeline menu.filter li {
+      display: inline;
+      margin-left: -4px; }
       #timeline menu.filter li.toggle {
-        display: block;
-        border: 0;
-        background-image: url(../img/ui-dn-arr-27x14.gif);
-        background-repeat: no-repeat;
-        background-size: 13px 7px;
-        background-position: 90% center;
-        cursor: pointer; }
+        display: none; }
     #timeline menu.filter a {
-      display: block;
-      padding: 7px 10px;
-      background: none; }
+      padding: 30px 15px 32px;
+      background: rgba(255, 255, 255, 0.6);
+      color: #cf1f2e; }
       #timeline menu.filter a:hover {
-        background: rgba(0, 0, 0, 0.05);
+        color: #65aec0; }
+      #timeline menu.filter a.active {
+        background: none;
         color: #000; }
-      #timeline menu.filter a.active:hover {
-        color: #000; } }
+        #timeline menu.filter a.active:hover {
+          color: #65aec0; }
+    @media screen and (max-width: 890px) {
+      #timeline menu.filter h6 {
+        background: none; }
+      #timeline menu.filter .hide {
+        display: none; }
+      #timeline menu.filter ul {
+        width: 200px;
+        padding-top: 0;
+        margin-top: 22px;
+        max-width: 40%;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        background: #fff;
+        position: absolute;
+        right: 0; }
+      #timeline menu.filter li {
+        display: block;
+        margin: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.2); }
+        #timeline menu.filter li.toggle {
+          display: block;
+          border: 0;
+          background-image: url(../img/ui-dn-arr-27x14.gif);
+          background-repeat: no-repeat;
+          background-size: 13px 7px;
+          background-position: 90% center;
+          cursor: pointer; }
+      #timeline menu.filter a {
+        display: block;
+        padding: 7px 10px;
+        background: none; }
+        #timeline menu.filter a:hover {
+          background: rgba(0, 0, 0, 0.05);
+          color: #000; }
+        #timeline menu.filter a.active:hover {
+          color: #000; } }
   #timeline .event {
     margin-top: 80px;
-    margin-bottom: 80px; }
+    margin-bottom: 80px;
+    text-align: left; }
+    @media only screen and (max-width: 768px) {
+      #timeline .event {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background: rgba(255, 255, 255, 0.8); } }
     @media only screen and (max-width: 768px) {
       #timeline .event {
         -moz-box-sizing: border-box;
@@ -827,13 +908,22 @@ header#page-header {
       box-sizing: border-box;
       width: 70%;
       float: left;
+      font-family: "Interstate Light", Helvetica, Arial, sans-serif;
+      font-style: normal;
+      font-weight: normal;
       font-size: 21px;
-      line-height: 26.25px;
-      font-weight: 300; }
+      line-height: 26.25px; }
       @media only screen and (max-width: 768px) {
         #timeline .event h3 {
           font-size: 18.9px;
           line-height: 23.625px; } }
+      @media only screen and (max-width: 768px) {
+        #timeline .event h3 {
+          -moz-box-sizing: border-box;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          width: 80%;
+          float: left; } }
       #timeline .event h3 a {
         color: #000; }
         #timeline .event h3 a:hover {
@@ -854,6 +944,14 @@ header#page-header {
         #timeline .event h4 {
           font-size: 18.9px;
           line-height: 23.625px; } }
+      @media only screen and (max-width: 768px) {
+        #timeline .event h4 {
+          -moz-box-sizing: border-box;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          width: 20%;
+          float: left;
+          text-align: right; } }
     #timeline .event p {
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
@@ -861,6 +959,13 @@ header#page-header {
       width: 70%;
       float: left;
       margin: 0; }
+      @media only screen and (max-width: 768px) {
+        #timeline .event p {
+          -moz-box-sizing: border-box;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          width: 100%;
+          float: left; } }
     #timeline .event .event__image {
       width: 100%; }
     @media only screen and (min-width: 769px) {
@@ -876,6 +981,13 @@ header#page-header {
         padding-right: 20px;
         float: left;
         text-align: right; } }
+  #timeline .button {
+    margin: 0 auto;
+    -moz-transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    -o-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%); }
 
 /*
 ==========================================================================
@@ -885,6 +997,9 @@ header#page-header {
 article.timeline-events header {
   text-align: center;
   margin-top: 60px; }
+  @media only screen and (max-width: 768px) {
+    article.timeline-events header {
+      margin-top: 30px; } }
   article.timeline-events header h1,
   article.timeline-events header h4 {
     margin: 0;
@@ -895,11 +1010,12 @@ article.timeline-events header {
     line-height: 1; }
     @media only screen and (max-width: 768px) {
       article.timeline-events header h1 {
-        font-size: 37.5px;
-        line-height: 46.875px; } }
+        font-size: 25px;
+        line-height: 31.25px; } }
   article.timeline-events header h4 {
     font-family: Interstate, Helvetica, Arial, sans-serif;
-    font-weight: 900;
+    font-style: normal;
+    font-weight: bold;
     font-size: 30px; }
     @media only screen and (max-width: 768px) {
       article.timeline-events header h4 {
@@ -913,6 +1029,9 @@ article.timeline-events .pagination {
   padding-left: 2.38095%;
   padding-right: 2.38095%;
   margin: 65px 0; }
+  @media only screen and (max-width: 768px) {
+    article.timeline-events .pagination {
+      margin: 35px 0; } }
   article.timeline-events .pagination ul {
     height: 15px;
     margin: 0;
@@ -942,8 +1061,9 @@ article.timeline-events .pagination {
     position: relative;
     top: -1px;
     background: #fff;
-    font-family: Interstate, Helvetica, Arial, sans-serif;
-    font-weight: 300;
+    font-family: "Interstate Light", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
     font-size: 14px; }
     @media only screen and (max-width: 768px) {
       article.timeline-events .pagination a span {
@@ -1008,22 +1128,21 @@ article.timeline-events .description.hasImages .description__text *:first-child 
     float: none; } }
 article.timeline-events .description .image {
   margin-bottom: 40px; }
+  article.timeline-events .description .image:last-of-type {
+    margin-bottom: 0; }
   article.timeline-events .description .image p {
     font-style: italic;
     color: rgba(0, 0, 0, 0.5); }
 article.timeline-events .description img {
   width: 100%;
   height: auto; }
-article.timeline-events .video,
-article.timeline-events .gallery {
-  margin-bottom: 20px; }
-  article.timeline-events .video header,
-  article.timeline-events .gallery header {
-    margin-top: 0;
-    margin-bottom: 30px; }
-  article.timeline-events .video h4,
-  article.timeline-events .gallery h4 {
-    line-height: 1; }
+article.timeline-events .video header,
+article.timeline-events .gallery header {
+  margin-top: 0;
+  margin-bottom: 30px; }
+article.timeline-events .video h4,
+article.timeline-events .gallery h4 {
+  line-height: 1; }
 article.timeline-events .gallery ul.images {
   margin: 0;
   padding: 0;
@@ -1074,17 +1193,30 @@ body.page-template-template-events-php .getInvolved > header {
     @media only screen and (max-width: 768px) {
       body.page-template-template-events-php .events > header h1,
       body.page-template-template-events-php .getInvolved > header h1 {
-        font-size: 37.5px;
-        line-height: 46.875px; } }
+        font-size: 25px;
+        line-height: 31.25px; } }
   body.page-template-template-events-php .events > header h4,
   body.page-template-template-events-php .getInvolved > header h4 {
     font-family: Interstate, Helvetica, Arial, sans-serif;
-    font-weight: 900;
+    font-style: normal;
+    font-weight: bold;
     font-size: 30px; }
     @media only screen and (max-width: 768px) {
       body.page-template-template-events-php .events > header h4,
       body.page-template-template-events-php .getInvolved > header h4 {
         font-size: 22.5px; } }
+  body.page-template-template-events-php .events > header .button,
+  body.page-template-template-events-php .getInvolved > header .button {
+    padding-right: 32px;
+    background-image: url(../img/ui-dn-arr-dbl-white-22x22.png);
+    background-repeat: no-repeat;
+    background-position: 94% center;
+    background-size: 11px 11px;
+    -moz-transform: translateY(-25%);
+    -webkit-transform: translateY(-25%);
+    -o-transform: translateY(-25%);
+    -ms-transform: translateY(-25%);
+    transform: translateY(-25%); }
 body.page-template-template-events-php .events .hr {
   margin-bottom: 0;
   background-position: 0 -2px; }
@@ -1131,7 +1263,8 @@ body.page-template-template-events-php .feed {
       float: left;
       border: 2px solid #000;
       font-family: Interstate, Helvetica, Arial, sans-serif;
-      font-weight: 900; }
+      font-style: normal;
+      font-weight: bold; }
       @media only screen and (max-width: 768px) {
         body.page-template-template-events-php .feed article .date {
           width: 55px; } }
@@ -1163,6 +1296,8 @@ body.page-template-template-events-php .feed {
         body.page-template-template-events-php .feed article h4,
         body.page-template-template-events-php .feed article p {
           width: calc(100% - 70px); } }
+body.page-template-template-events-php .getInvolved {
+  padding-top: 20px; }
 body.page-template-template-events-php .contentBlock {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -1203,6 +1338,9 @@ body.page-template-template-events-php .contentBlock {
 body.page-template-template-about-php header {
   text-align: center;
   margin-top: 60px; }
+  @media only screen and (max-width: 768px) {
+    body.page-template-template-about-php header {
+      margin-top: 30px; } }
   body.page-template-template-about-php header h1,
   body.page-template-template-about-php header h4 {
     margin: 0;
@@ -1213,11 +1351,12 @@ body.page-template-template-about-php header {
     line-height: 1; }
     @media only screen and (max-width: 768px) {
       body.page-template-template-about-php header h1 {
-        font-size: 37.5px;
-        line-height: 46.875px; } }
+        font-size: 25px;
+        line-height: 31.25px; } }
   body.page-template-template-about-php header h4 {
     font-family: Interstate, Helvetica, Arial, sans-serif;
-    font-weight: 900;
+    font-style: normal;
+    font-weight: bold;
     font-size: 30px; }
     @media only screen and (max-width: 768px) {
       body.page-template-template-about-php header h4 {
@@ -1260,8 +1399,9 @@ body.page-template-template-about-php .pagination {
     position: relative;
     top: -1px;
     background: #fff;
-    font-family: Interstate, Helvetica, Arial, sans-serif;
-    font-weight: 300;
+    font-family: "Interstate Light", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
     font-size: 14px; }
     @media only screen and (max-width: 768px) {
       body.page-template-template-about-php .pagination a span {
@@ -1326,6 +1466,8 @@ body.page-template-template-about-php .description.hasImages .description__text 
     float: none; } }
 body.page-template-template-about-php .description .image {
   margin-bottom: 40px; }
+  body.page-template-template-about-php .description .image:last-of-type {
+    margin-bottom: 0; }
   body.page-template-template-about-php .description .image p {
     font-style: italic;
     color: rgba(0, 0, 0, 0.5); }
@@ -1371,33 +1513,42 @@ body.page-template-template-about-php .gallery li {
 
 /*
 ==========================================================================
-  ANNIVERSARY EVENT (scss/partials/_anniversary-event.scss)
+  ANNIVERSARY/SIGNATURE EVENT (scss/partials/_anniversary-event.scss)
 ==========================================================================
 */
-article.anniversary-events header {
+article.anniversary-events header,
+article.signature-events header {
   text-align: center;
   margin-top: 60px; }
   article.anniversary-events header h1,
-  article.anniversary-events header h4 {
+  article.anniversary-events header h4,
+  article.signature-events header h1,
+  article.signature-events header h4 {
     margin: 0;
     text-transform: uppercase; }
-  article.anniversary-events header h1 {
+  article.anniversary-events header h1,
+  article.signature-events header h1 {
     font-size: 50px;
     line-height: 62.5px;
     line-height: 1; }
     @media only screen and (max-width: 768px) {
-      article.anniversary-events header h1 {
-        font-size: 37.5px;
-        line-height: 46.875px; } }
-  article.anniversary-events header h4 {
+      article.anniversary-events header h1,
+      article.signature-events header h1 {
+        font-size: 25px;
+        line-height: 31.25px; } }
+  article.anniversary-events header h4,
+  article.signature-events header h4 {
     font-family: Interstate, Helvetica, Arial, sans-serif;
-    font-weight: 900;
+    font-style: normal;
+    font-weight: bold;
     font-size: 30px; }
     @media only screen and (max-width: 768px) {
-      article.anniversary-events header h4 {
+      article.anniversary-events header h4,
+      article.signature-events header h4 {
         font-size: 22.5px; } }
 @media only screen and (max-width: 768px) {
-  article.anniversary-events .description.hasImages .description__text {
+  article.anniversary-events .description.hasImages .description__text,
+  article.signature-events .description.hasImages .description__text {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -1406,7 +1557,8 @@ article.anniversary-events header {
     padding-left: 2.38095%;
     padding-right: 2.38095%; } }
 @media only screen and (min-width: 769px) {
-  article.anniversary-events .description.hasImages .description__text {
+  article.anniversary-events .description.hasImages .description__text,
+  article.signature-events .description.hasImages .description__text {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -1414,10 +1566,12 @@ article.anniversary-events header {
     float: left;
     padding-left: 2.38095%;
     padding-right: 2.38095%; } }
-article.anniversary-events .description.hasImages .description__text *:first-child {
+article.anniversary-events .description.hasImages .description__text *:first-child,
+article.signature-events .description.hasImages .description__text *:first-child {
   margin-top: 0; }
 @media only screen and (max-width: 768px) {
-  article.anniversary-events .description.hasImages .description__images {
+  article.anniversary-events .description.hasImages .description__images,
+  article.signature-events .description.hasImages .description__images {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -1426,7 +1580,8 @@ article.anniversary-events .description.hasImages .description__text *:first-chi
     padding-left: 2.38095%;
     padding-right: 2.38095%; } }
 @media only screen and (min-width: 769px) {
-  article.anniversary-events .description.hasImages .description__images {
+  article.anniversary-events .description.hasImages .description__images,
+  article.signature-events .description.hasImages .description__images {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -1435,7 +1590,8 @@ article.anniversary-events .description.hasImages .description__text *:first-chi
     padding-left: 2.38095%;
     padding-right: 2.38095%; } }
 @media only screen and (max-width: 768px) {
-  article.anniversary-events .description.noImages .description__text {
+  article.anniversary-events .description.noImages .description__text,
+  article.signature-events .description.noImages .description__text {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -1444,7 +1600,8 @@ article.anniversary-events .description.hasImages .description__text *:first-chi
     padding-left: 2.38095%;
     padding-right: 2.38095%; } }
 @media only screen and (min-width: 769px) {
-  article.anniversary-events .description.noImages .description__text {
+  article.anniversary-events .description.noImages .description__text,
+  article.signature-events .description.noImages .description__text {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -1454,29 +1611,40 @@ article.anniversary-events .description.hasImages .description__text *:first-chi
     padding-right: 2.38095%;
     margin: 0 auto;
     float: none; } }
-article.anniversary-events .description .image {
+article.anniversary-events .description .image,
+article.signature-events .description .image {
   margin-bottom: 40px; }
-  article.anniversary-events .description .image p {
+  article.anniversary-events .description .image p,
+  article.signature-events .description .image p {
     font-style: italic;
     color: rgba(0, 0, 0, 0.5); }
-article.anniversary-events .description img {
+article.anniversary-events .description img,
+article.signature-events .description img {
   width: 100%;
   height: auto; }
 article.anniversary-events .video,
-article.anniversary-events .gallery {
+article.anniversary-events .gallery,
+article.signature-events .video,
+article.signature-events .gallery {
   margin-bottom: 20px; }
   article.anniversary-events .video header,
-  article.anniversary-events .gallery header {
+  article.anniversary-events .gallery header,
+  article.signature-events .video header,
+  article.signature-events .gallery header {
     margin-top: 0;
     margin-bottom: 30px; }
   article.anniversary-events .video h4,
-  article.anniversary-events .gallery h4 {
+  article.anniversary-events .gallery h4,
+  article.signature-events .video h4,
+  article.signature-events .gallery h4 {
     line-height: 1; }
-article.anniversary-events .gallery ul.images {
+article.anniversary-events .gallery ul.images,
+article.signature-events .gallery ul.images {
   margin: 0;
   padding: 0;
   list-style-type: none; }
-article.anniversary-events .gallery li {
+article.anniversary-events .gallery li,
+article.signature-events .gallery li {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -1487,7 +1655,8 @@ article.anniversary-events .gallery li {
   padding-top: 2.38095%;
   padding-bottom: 2.38095%; }
   @media only screen and (max-width: 768px) {
-    article.anniversary-events .gallery li {
+    article.anniversary-events .gallery li,
+    article.signature-events .gallery li {
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
@@ -1495,7 +1664,8 @@ article.anniversary-events .gallery li {
       float: left;
       padding-left: 2.38095%;
       padding-right: 2.38095%; } }
-  article.anniversary-events .gallery li img {
+  article.anniversary-events .gallery li img,
+  article.signature-events .gallery li img {
     width: 100%;
     height: auto; }
 
@@ -1512,8 +1682,9 @@ article.anniversary-events .gallery li {
 footer#footer {
   margin-top: 80px;
   margin-bottom: 150px;
-  font-family: Interstate, Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-family: "Interstate Light", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
   font-size: 13px;
   line-height: 17px; }
   @media only screen and (max-width: 768px) {

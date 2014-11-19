@@ -5,46 +5,46 @@
 */
 
 h1 {
-    @include font-family-interstate (700);
+    @include font-family-interstate-bold;
     @include font-size-huge;
     text-transform: uppercase;
     b, strong {
-        @include font-family-interstate (1000);
+        @include font-family-interstate-bold;
     }
 }
 h2 {
-    @include font-family-interstate (300);
+    @include font-family-interstate-light;
     @include font-size-large;
     b, strong {
-        @include font-family-interstate (700);
+        @include font-family-interstate-regular;
     }
 }
 h3 {
-    @include font-family-interstate (700);
+    @include font-family-interstate-bold;
     @include font-size-large;
     b, strong {
-        @include font-family-interstate (1000);
+        @include font-family-interstate-bold;
     }
 }
 h4 {
-    @include font-family-interstate (300);
+    @include font-family-interstate-light;
     @include font-size-large;
     b, strong {
-        @include font-family-interstate (700);
+        @include font-family-interstate-regular;
     }
 }
 h5 {
-    @include font-family-interstate (700);
+    @include font-family-interstate-regular;
     @include font-size-medium;
     b, strong {
-        @include font-family-interstate (1000);
+        @include font-family-interstate-bold;
     }
 }
 h6 {
-    @include font-family-interstate (300);
+    @include font-family-interstate-light;
     @include font-size-medium;
     b, strong {
-        @include font-family-interstate (700);
+        @include font-family-interstate-regular;
     }
 }
 

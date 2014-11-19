@@ -16,9 +16,21 @@
 // 	text-decoration: none;
 // 	text-shadow: none;
 // }
-@mixin font-family-interstate ($weight) {
+
+@mixin font-family-interstate-light {
+	font-family: "Interstate Light", Helvetica, Arial, sans-serif;
+	font-style: normal;
+ 	font-weight: normal;
+}
+@mixin font-family-interstate-regular {
 	font-family: Interstate, Helvetica, Arial, sans-serif;
- 	font-weight: $weight;
+	font-style: normal;
+ 	font-weight: normal;
+}
+@mixin font-family-interstate-bold {
+	font-family: Interstate, Helvetica, Arial, sans-serif;
+	font-style: normal;
+ 	font-weight: bold;
 }
 
 @mixin font-family-garamond ($weight) {
@@ -38,16 +50,16 @@ $tiny: 14px;
 	font-size: $huge;
 	line-height: $huge * 1.25;
 	@include media-query('mobile') {
-		font-size: $huge * .75;
-		line-height: ($huge * 1.25) * .75;
+		font-size: $huge * .5;
+		line-height: ($huge * 1.25) * .5;
 	}
 }
 @mixin font-size-large {
 	font-size: $large;
 	line-height: $large * 1.25;
 	@include media-query('mobile') {
-		font-size: $large * .75;
-		line-height: ($large * 1.25) * .75;
+		font-size: $large * .5;
+		line-height: ($large * 1.25) * .5;
 	}
 }
 @mixin font-size-medium {

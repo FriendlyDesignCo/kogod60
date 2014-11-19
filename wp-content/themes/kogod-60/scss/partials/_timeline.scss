@@ -9,8 +9,10 @@
   background-repeat: repeat-y;
   background-position: top center;
   background-size: 8px 4px;
+  text-align: center;
 
   menu.filter {
+    text-align: left;
     > div {
       position: relative;
       background-color: $white;
@@ -28,20 +30,28 @@
       float: left;
 
       background: $white-60;
-      @include font-family-interstate(900);
+      @include font-family-interstate-bold;
       @include font-size-small;
       text-transform: uppercase;
+
+      @include media-query(mobile) {
+        @include font-size-tiny;
+      }
     }
 
     ul {
       margin: 0;
       padding: 30px 0 0;
 
-      @include font-family-interstate(300);
+      @include font-family-interstate-light;
       @include font-size-small;
       list-style-type: none;
       display: inline-block;
       float: right;
+
+      @include media-query(mobile) {
+        @include font-size-tiny;
+      }
     }
     li {
       display: inline;
@@ -82,11 +92,12 @@
         width: 200px;
         padding-top: 0;
         margin-top: 22px;
-        max-width: 45%;
+        max-width: 40%;
 
         border: 1px solid $black-20;
         background: $white;
         position: absolute;
+        right: 0;
       }
       li {
         display: block;
@@ -122,6 +133,17 @@
   .event {
     margin-top: 80px;
     margin-bottom: 80px;
+    
+    text-align: left;
+
+    @include media-query(mobile) {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+      background: $white-80;
+    }
 
     // Column widths
     @include media-query(mobile) {
@@ -137,8 +159,12 @@
     // Default styling
     h3 {
       @include span(70% no-gutters);
+      @include font-family-interstate-light;
       @include font-size-default;
-      font-weight: 300;
+
+      @include media-query(mobile) {
+        @include span(80% no-gutters);
+      }
 
       a {
         color: $black;
@@ -154,10 +180,18 @@
 
       font-weight: 500;
       @include font-size-default;
+
+      @include media-query(mobile) {
+        @include span(20% no-gutters);
+        text-align: right;
+      }
     }
     p {
       @include span(70% no-gutters);
       margin: 0;
+      @include media-query(mobile) {
+        @include span(100% no-gutters);
+      }
     }
     .event__image {
       width: 100%;
@@ -185,5 +219,15 @@
         }
       }
     }
+  }
+
+  .button {
+    margin: 0 auto;
+
+    -moz-transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    -o-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
   }
 }
