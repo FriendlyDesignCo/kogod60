@@ -830,16 +830,21 @@ header#page-header {
         color: #000; }
         #timeline menu.filter a.active:hover {
           color: #65aec0; }
+    #timeline menu.filter .mobileBreak {
+      display: none; }
+    @media screen and (min-width: 891px) {
+      #timeline menu.filter .hide {
+        display: block !important; } }
     @media screen and (max-width: 890px) {
       #timeline menu.filter h6 {
         background: none; }
       #timeline menu.filter .hide {
         display: none; }
       #timeline menu.filter ul {
-        width: 200px;
+        width: 240px;
         padding-top: 0;
         margin-top: 22px;
-        max-width: 40%;
+        max-width: 45%;
         border: 1px solid rgba(0, 0, 0, 0.2);
         background: #fff;
         position: absolute;
@@ -854,8 +859,10 @@ header#page-header {
           background-image: url(../img/ui-dn-arr-27x14.gif);
           background-repeat: no-repeat;
           background-size: 13px 7px;
-          background-position: 90% center;
+          background-position: 95% center;
           cursor: pointer; }
+          #timeline menu.filter li.toggle a {
+            padding-right: 20px; }
       #timeline menu.filter a {
         display: block;
         padding: 7px 10px;
@@ -865,6 +872,9 @@ header#page-header {
           color: #000; }
         #timeline menu.filter a.active:hover {
           color: #000; } }
+    @media screen and (max-width: 374px) {
+      #timeline menu.filter .mobileBreak {
+        display: block; } }
   #timeline .event {
     margin-top: 80px;
     margin-bottom: 80px;
@@ -1131,7 +1141,6 @@ article.timeline-events .description .image {
   article.timeline-events .description .image:last-of-type {
     margin-bottom: 0; }
   article.timeline-events .description .image p {
-    font-style: italic;
     color: rgba(0, 0, 0, 0.5); }
 article.timeline-events .description img {
   width: 100%;

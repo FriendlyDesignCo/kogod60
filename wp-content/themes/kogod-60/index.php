@@ -6,7 +6,7 @@
 
 					<menu class="filter container">
 						<div>
-							<h6>Explore 60 years of:</h6>
+							<h6>Explore 60<br class="mobileBreak" /> years of:</h6>
 							<ul>
 								<li class="toggle"><a>View All</a></li>
 								<div class="hide">
@@ -33,7 +33,7 @@
 
 					<!-- the loop -->
 					<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-					<article class="event">
+					<article class="event" data-categories="<?php $categories = get_the_category(); foreach($categories as $category) { echo $category->slug . ' '; } ?>">
 						<header>
 							<?php if (get_field('timeline_image')) {
 								$image = get_field('timeline_image'); ?>

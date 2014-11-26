@@ -105,7 +105,9 @@ var cs = (function($) {
 			/*
 				USER INTERACTION
 			*/
-			// Click events and whatnot.
+			$('.filter a').click(function(){
+				userInput.timelineCategoryClick($(this));
+			})
 			
 		};
 
@@ -168,12 +170,12 @@ var cs = (function($) {
 		var setFilterHeadlineWidth = function() {
 			// 1. Gather widths
 			var navWidth = $('.filter ul').outerWidth();
-			console.log(navWidth);
+			// console.log(navWidth);
 			var containerWidth = $('.filter > div ').outerWidth();
 			
 			// 2. Determine new width for headline based on total div width - ul width
 			var newHeadlineWidth = containerWidth - navWidth - 4; // 4 to accomodate for negative margin on li's
-			console.log(newHeadlineWidth);
+			// console.log(newHeadlineWidth);
 
 			// 3. Set new weidth on headline
 			$('.filter h6').css({"width":newHeadlineWidth});
@@ -195,13 +197,29 @@ var cs = (function($) {
 	*/
 	var userInput = (function() {
 
-		var example = function() { // Matches the height of various elements to other elements in ways that are impossible with CSS alone
-			
+		var timelineCategoryClick = function(clicked) { // Matches the height of various elements to other elements in ways that are impossible with CSS alone
+			// 1. Close/open select if we're displaying the select.
+			if ($(window).width() <= 890) {
+				$('.filter .hide').slideToggle();
+			}
+
+			// 2. Swap the Toggle link text to whatever the user clicked
+			var clickedItemName = clicked.text();
+			$('.toggle a').text(clickedItemName);
+
+			// 3. Change the active nav
+			if (clicked.closest('.toggle').length === 0) { // Unless the user clicked the toggle, that is.
+				$('.filter a.active').removeClass('active');
+				clicked.addClass('active');
+			}
+
+			// 4. Isotope this biznatch.
+
 		};
 
 		// public
 		return {
-			example: example
+			timelineCategoryClick: timelineCategoryClick
 		};
 
 	})(); // var uiMod = (function() {

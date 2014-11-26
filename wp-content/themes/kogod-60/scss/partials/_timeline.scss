@@ -79,6 +79,17 @@
         }
       }
     }
+    .mobileBreak {
+      display: none;
+    }
+    
+    // Ensure nav isn't hidden if user has used the <select> state
+    // and then resized their browser to be larger again.
+    @media screen and (min-width: 891px) {
+      .hide {
+        display: block !important;
+      }
+    }
 
     // Mobile responsive state (mimics a <select>)
     @media screen and (max-width: 890px) {
@@ -89,10 +100,10 @@
         display: none;
       }
       ul {
-        width: 200px;
+        width: 240px;
         padding-top: 0;
         margin-top: 22px;
-        max-width: 40%;
+        max-width: 45%;
 
         border: 1px solid $black-20;
         background: $white;
@@ -111,8 +122,12 @@
           background-image: url(../img/ui-dn-arr-27x14.gif);
           background-repeat: no-repeat;
           background-size: 13px 7px;
-          background-position: 90% center;
+          background-position: 95% center;
           cursor: pointer;
+
+          a {
+            padding-right: 20px;
+          }
         }
       }
       a {
@@ -126,6 +141,11 @@
         &.active:hover {
           color: $black;
         }
+      }
+    }
+    @media screen and (max-width: 374px) {
+      .mobileBreak {
+        display: block;
       }
     }
   }
