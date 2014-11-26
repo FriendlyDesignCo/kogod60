@@ -94,6 +94,8 @@
 
     // Mobile responsive state (mimics a <select>)
     @media screen and (max-width: 890px) {
+      position: relative;
+      z-index: 2;
       h6 {
         background: none;
       }

@@ -837,42 +837,45 @@ header#page-header {
       #timeline menu.filter .hide {
         display: block !important; } }
     @media screen and (max-width: 890px) {
-      #timeline menu.filter h6 {
-        background: none; }
-      #timeline menu.filter .hide {
-        display: none; }
-      #timeline menu.filter ul {
-        width: 240px;
-        padding-top: 0;
-        margin-top: 22px;
-        max-width: 45%;
-        border: 1px solid rgba(0, 0, 0, 0.2);
-        background: #fff;
-        position: absolute;
-        right: 0; }
-      #timeline menu.filter li {
-        display: block;
-        margin: 0;
-        border-top: 1px solid rgba(0, 0, 0, 0.2); }
-        #timeline menu.filter li.toggle {
+      #timeline menu.filter {
+        position: relative;
+        z-index: 2; }
+        #timeline menu.filter h6 {
+          background: none; }
+        #timeline menu.filter .hide {
+          display: none; }
+        #timeline menu.filter ul {
+          width: 240px;
+          padding-top: 0;
+          margin-top: 22px;
+          max-width: 45%;
+          border: 1px solid rgba(0, 0, 0, 0.2);
+          background: #fff;
+          position: absolute;
+          right: 0; }
+        #timeline menu.filter li {
           display: block;
-          border: 0;
-          background-image: url(../img/ui-dn-arr-27x14.gif);
-          background-repeat: no-repeat;
-          background-size: 13px 7px;
-          background-position: 95% center;
-          cursor: pointer; }
-          #timeline menu.filter li.toggle a {
-            padding-right: 20px; }
-      #timeline menu.filter a {
-        display: block;
-        padding: 7px 10px;
-        background: none; }
-        #timeline menu.filter a:hover {
-          background: rgba(0, 0, 0, 0.05);
-          color: #000; }
-        #timeline menu.filter a.active:hover {
-          color: #000; } }
+          margin: 0;
+          border-top: 1px solid rgba(0, 0, 0, 0.2); }
+          #timeline menu.filter li.toggle {
+            display: block;
+            border: 0;
+            background-image: url(../img/ui-dn-arr-27x14.gif);
+            background-repeat: no-repeat;
+            background-size: 13px 7px;
+            background-position: 95% center;
+            cursor: pointer; }
+            #timeline menu.filter li.toggle a {
+              padding-right: 20px; }
+        #timeline menu.filter a {
+          display: block;
+          padding: 7px 10px;
+          background: none; }
+          #timeline menu.filter a:hover {
+            background: rgba(0, 0, 0, 0.05);
+            color: #000; }
+          #timeline menu.filter a.active:hover {
+            color: #000; } }
     @media screen and (max-width: 374px) {
       #timeline menu.filter .mobileBreak {
         display: block; } }
@@ -1120,6 +1123,9 @@ article.timeline-events .pagination {
       text-align: right; }
       article.timeline-events .pagination li.next a {
         padding-right: 0; }
+        article.timeline-events .pagination li.next a:active {
+          color: #000;
+          opacity: 1; }
   article.timeline-events .pagination a {
     padding: 2px 10px;
     position: relative;

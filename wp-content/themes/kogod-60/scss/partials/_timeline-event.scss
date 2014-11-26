@@ -69,6 +69,10 @@ article.timeline-events {
         text-align: right;
         a {
           padding-right: 0;
+          &:active {
+            color: $black;
+            opacity: 1;
+          }
         }
       }
     }
