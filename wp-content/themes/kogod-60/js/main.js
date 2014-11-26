@@ -37,6 +37,24 @@ var cs = (function($) {
 		var init = function() { // Called on page load, calls all other functions that should occur on page load
 			
 			// PLUGINS CALLS / DEVICE FIXES
+			// Isotope
+			var $isotopeContainer = $('.timelineHolder');
+			$isotopeContainer.isotope({ // init
+				resizable: false, // disable normal resizing
+				layoutMode: 'fitRows',
+				// masonry: {
+				//   columnWidth: $('.event:nth-of-type(1)').outerWidth() * .02,
+				//   gutter: 0
+				// },
+				itemSelector: 'article',
+			});
+			$(window).resize(function(){
+			  $isotopeContainer.isotope({
+			    // update columnWidth to a percentage of container width
+			    masonry: { columnWidth: $('.event:nth-of-type(1)').outerWidth() * .02 }
+			  });
+			});
+
 			conditionizr({ // http://conditionizr.com/docs.html
 				debug      : false,
 				scriptSrc  : 'js/conditionizr/',
@@ -214,7 +232,32 @@ var cs = (function($) {
 			}
 
 			// 4. Isotope this biznatch.
-
+			if (clicked.closest('.toggle').length === 0) { // Unless the user clicked the toggle, that is.
+				var clickedCategory = clicked.attr('data-category');
+				if (clickedCategory === "view-all") {
+					// Remove/Add classes from previously visible items
+					$('.vis-1, .vis-2, .vis-3, .vis-4, .vis-5, .vis-6, .vis-7, .vis-8, .vis-9, .vis-10, .vis-11, .vis-12, .vis-13, .vis-14, .vis-15, .vis-16, .vis-17, .vis-18, .vis-19, .vis-20, .vis-21, .vis-22, .vis-23, .vis-24, .vis-25, .vis-26, .vis-27, .vis-28, .vis-29, .vis-30, .vis-31, .vis-32, .vis-33, .vis-34, .vis-35, .vis-36, .vis-37, .vis-38, .vis-39, .vis-40, .vis-41, .vis-42, .vis-43, .vis-44, .vis-45, .vis-46, .vis-47, .vis-48, .vis-49, .vis-50, .vis-51, .vis-52, .vis-53, .vis-54, .vis-55, .vis-56, .vis-57, .vis-58, .vis-59, .vis-60').removeClass('vis-1 vis-2 vis-3 vis-4 vis-5 vis-6 vis-7 vis-8 vis-9 vis-10 vis-11 vis-12 vis-13 vis-14 vis-15 vis-16 vis-17 vis-18 vis-19 vis-20 vis-21 vis-22 vis-23 vis-24 vis-25 vis-26 vis-27 vis-28 vis-29 vis-30 vis-31 vis-32 vis-33 vis-34 vis-35 vis-36 vis-37 vis-38 vis-39 vis-40 vis-41 vis-42 vis-43 vis-44 vis-45 vis-46 vis-47 vis-48 vis-49 vis-50 vis-51 vis-52 vis-53 vis-54 vis-55 vis-56 vis-57 vis-58 vis-59 vis-60');
+					$('.timelineHolder .event').addClass('visible');
+					var i = 1;
+					$('.timelineHolder .event').each(function(){
+						$(this).addClass('vis-' + i);
+						i++;
+					});
+					$('.timelineHolder').isotope({ filter: '.milestones, .pioneering-education, .people-of-kogod' })
+				}
+				else {
+					// Remove/Add classes from previously visible items
+					$('.timelineHolder .visible').removeClass('visible');
+					$('.vis-1, .vis-2, .vis-3, .vis-4, .vis-5, .vis-6, .vis-7, .vis-8, .vis-9, .vis-10, .vis-11, .vis-12, .vis-13, .vis-14, .vis-15, .vis-16, .vis-17, .vis-18, .vis-19, .vis-20, .vis-21, .vis-22, .vis-23, .vis-24, .vis-25, .vis-26, .vis-27, .vis-28, .vis-29, .vis-30, .vis-31, .vis-32, .vis-33, .vis-34, .vis-35, .vis-36, .vis-37, .vis-38, .vis-39, .vis-40, .vis-41, .vis-42, .vis-43, .vis-44, .vis-45, .vis-46, .vis-47, .vis-48, .vis-49, .vis-50, .vis-51, .vis-52, .vis-53, .vis-54, .vis-55, .vis-56, .vis-57, .vis-58, .vis-59, .vis-60').removeClass('vis-1 vis-2 vis-3 vis-4 vis-5 vis-6 vis-7 vis-8 vis-9 vis-10 vis-11 vis-12 vis-13 vis-14 vis-15 vis-16 vis-17 vis-18 vis-19 vis-20 vis-21 vis-22 vis-23 vis-24 vis-25 vis-26 vis-27 vis-28 vis-29 vis-30 vis-31 vis-32 vis-33 vis-34 vis-35 vis-36 vis-37 vis-38 vis-39 vis-40 vis-41 vis-42 vis-43 vis-44 vis-45 vis-46 vis-47 vis-48 vis-49 vis-50 vis-51 vis-52 vis-53 vis-54 vis-55 vis-56 vis-57 vis-58 vis-59 vis-60');
+					$('.timelineHolder .' + clickedCategory).addClass('visible');
+					var i = 1;
+					$('.timelineHolder .' + clickedCategory).each(function(){
+						$(this).addClass('vis-' + i);
+						i++;
+					});
+					$('.timelineHolder').isotope({ filter: '.' + clickedCategory });// Isotope things for the clicked category
+				}
+			}
 		};
 
 		// public

@@ -10,17 +10,19 @@
 							<ul>
 								<li class="toggle"><a>View All</a></li>
 								<div class="hide">
-									<li><a href="#">Milestones</a></li>
-									<li><a href="#">Pioneering Education</a></li>
-									<li><a href="#">People of Kogod</a></li>
-									<li><a class="active" href="#">View All</a></li>
+									<li><a data-category="milestones">Milestones</a></li>
+									<li><a data-category="pioneering-education">Pioneering Education</a></li>
+									<li><a data-category="people-of-kogod">People of Kogod</a></li>
+									<li><a class="active" data-category="view-all">View All</a></li>
 								</div>
 							</ul>
 							<div class="clearfix"></div>
 						<div>
 					</menu>
-					
-					<?php
+
+					<div class="timelineHolder">
+						<div class="columnSizer"></div>
+						<?php
 						//
 						//	DEFINE WP_QUERY TO GRAB TIMELINE EVENT POSTS
 						//
@@ -29,11 +31,12 @@
 							'order' => 'ASC'
 						)); ?>
 
-					<?php if ( $query->have_posts() ) : ?>
-
+					<?php if ( $query->have_posts() ) : 
+						$i = 1;
+					?>
 					<!-- the loop -->
 					<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-					<article class="event" data-categories="<?php $categories = get_the_category(); foreach($categories as $category) { echo $category->slug . ' '; } ?>">
+					<article class="event visible <?php echo 'vis-' . $i; ?> <?php $categories = get_the_category(); foreach($categories as $category) { echo $category->slug . ' '; } ?>">
 						<header>
 							<?php if (get_field('timeline_image')) {
 								$image = get_field('timeline_image'); ?>
@@ -50,7 +53,10 @@
 						<p><a href="<?php the_permalink(); ?>">Learn more</a></p>
 						<?php } ?>
 					</article>
-					<?php endwhile; ?>
+
+					<?php 
+						$i++;
+					endwhile; ?>
 					<!-- end of the loop -->
 
 
@@ -59,6 +65,8 @@
 					<?php else : ?>
 					<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 					<?php endif; ?>
+
+					</div> <!-- .timelineHolder -->
 
 					<div class="clearfix"></div>
 					<a class="button" href="<? bloginfo('url'); ?>/events/">Learn more about 60th Events and&nbsp;Opportunities</a>

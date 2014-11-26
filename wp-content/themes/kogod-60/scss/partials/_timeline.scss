@@ -66,6 +66,7 @@
 
       background: $white-60;
       color: $red;
+      cursor: pointer;
 
       &:hover {
         color: $blue;
@@ -150,9 +151,40 @@
     }
   }
 
-  .event {
-    margin-top: 80px;
-    margin-bottom: 80px;
+  .timelineHolder {
+    margin: 40px auto;
+
+    // Widths to ensure Masonry always has a good column width
+    @media screen and (min-width: 769px) and (max-width: 800px) {
+      width: 725px;
+    }
+    @media screen and (min-width: 801px) and (max-width: 850px) {
+      width: 765px;
+    }
+    @media screen and (min-width: 851px) and (max-width: 900px) {
+      width: 800px;
+    }
+    @media screen and (min-width: 901px) and (max-width: 950px) {
+      width: 850px;
+    }
+    @media screen and (min-width: 951px) and (max-width: 1000px) {
+      width: 906px;
+    }
+    @media screen and (min-width: 1001px) and (max-width: 1050px) {
+      width: 948px;
+    }
+    @media screen and (min-width: 1051px) {
+      width: 998px;
+    }
+    // @media screen and (min-width: 1060px) {
+    //   width: 1000px;
+    // }
+
+  }
+
+  article.event {
+    margin-top: 40px;
+    margin-bottom: 40px;
     
     text-align: left;
 
@@ -166,13 +198,45 @@
     }
 
     // Column widths
-    @include media-query(mobile) {
-      @include span(100%);
-    }
-    @include media-query(tablet-and-larger) {
-      @include span(58%);
-      &:nth-of-type(3n+1) {
-        @include span(42%);
+    &.visible {
+      @include media-query(mobile) {
+        @include span(100%);
+      }
+      @include media-query(tablet-and-larger) {
+        @include span(58%);
+        
+        &.vis-1,
+        &.vis-4,
+        &.vis-5,
+        &.vis-8,
+        &.vis-9,
+        &.vis-12,
+        &.vis-13,
+        &.vis-16,
+        &.vis-17,
+        &.vis-20,
+        &.vis-21,
+        &.vis-24
+        &.vis-25,
+        &.vis-28,
+        &.vis-29,
+        &.vis-32,
+        &.vis-33,
+        &.vis-36,
+        &.vis-37,
+        &.vis-40,
+        &.vis-41,
+        &.vis-44,
+        &.vis-45,
+        &.vis-48,
+        &.vis-49,
+        &.vis-52,
+        &.vis-53,
+        &.vis-56,
+        &.vis-57,
+        &.vis-60 {
+          @include span(42%);          
+        }
       }
     }
     
@@ -218,24 +282,84 @@
     }
 
     // Modifications to default styling for columns
-    @include media-query(tablet-and-larger) {
-      &:nth-of-type(odd) {
-        text-align: right;
-        h4 {
-          text-align: left;
-          padding-left: 20px;
-        }
-      }
-
-      &:nth-of-type(even) {
-        h3,
-        p {
-          float: right;
-        }
-        h4 {
-          padding-right: 20px;
-          float: left;
+    &.visible {
+      @include media-query(tablet-and-larger) {
+        &.vis-1,
+        &.vis-3,
+        &.vis-5,
+        &.vis-7,
+        &.vis-9,
+        &.vis-11,
+        &.vis-13,
+        &.vis-15,
+        &.vis-17,
+        &.vis-19,
+        &.vis-21,
+        &.vis-23,
+        &.vis-25,
+        &.vis-27,
+        &.vis-29,
+        &.vis-31,
+        &.vis-33,
+        &.vis-35,
+        &.vis-37,
+        &.vis-39,
+        &.vis-41,
+        &.vis-43,
+        &.vis-45,
+        &.vis-47,
+        &.vis-49,
+        &.vis-51,
+        &.vis-53,
+        &.vis-55,
+        &.vis-57,
+        &.vis-59 {
           text-align: right;
+          h4 {
+            text-align: left;
+            padding-left: 20px;
+          }
+        }
+
+        &.vis-2,
+        &.vis-4,
+        &.vis-6,
+        &.vis-8,
+        &.vis-10,
+        &.vis-12,
+        &.vis-14,
+        &.vis-16,
+        &.vis-18,
+        &.vis-20,
+        &.vis-22,
+        &.vis-24,
+        &.vis-26,
+        &.vis-28,
+        &.vis-30,
+        &.vis-32,
+        &.vis-34,
+        &.vis-36,
+        &.vis-38,
+        &.vis-40,
+        &.vis-42,
+        &.vis-44,
+        &.vis-46,
+        &.vis-48,
+        &.vis-50,
+        &.vis-52,
+        &.vis-54,
+        &.vis-56,
+        &.vis-58,
+        &.vis-60 {
+          h3,
+          p {
+            float: right;
+          }
+          h4 {
+            padding-right: 20px;
+            float: left;
+            text-align: right;
+          }
         }
       }
     }

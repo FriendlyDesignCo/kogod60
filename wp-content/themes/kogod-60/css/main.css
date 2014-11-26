@@ -822,7 +822,8 @@ header#page-header {
     #timeline menu.filter a {
       padding: 30px 15px 32px;
       background: rgba(255, 255, 255, 0.6);
-      color: #cf1f2e; }
+      color: #cf1f2e;
+      cursor: pointer; }
       #timeline menu.filter a:hover {
         color: #65aec0; }
       #timeline menu.filter a.active {
@@ -875,19 +876,42 @@ header#page-header {
     @media screen and (max-width: 374px) {
       #timeline menu.filter .mobileBreak {
         display: block; } }
-  #timeline .event {
-    margin-top: 80px;
-    margin-bottom: 80px;
+  #timeline .timelineHolder {
+    margin: 40px auto; }
+    @media screen and (min-width: 769px) and (max-width: 800px) {
+      #timeline .timelineHolder {
+        width: 725px; } }
+    @media screen and (min-width: 801px) and (max-width: 850px) {
+      #timeline .timelineHolder {
+        width: 765px; } }
+    @media screen and (min-width: 851px) and (max-width: 900px) {
+      #timeline .timelineHolder {
+        width: 800px; } }
+    @media screen and (min-width: 901px) and (max-width: 950px) {
+      #timeline .timelineHolder {
+        width: 850px; } }
+    @media screen and (min-width: 951px) and (max-width: 1000px) {
+      #timeline .timelineHolder {
+        width: 906px; } }
+    @media screen and (min-width: 1001px) and (max-width: 1050px) {
+      #timeline .timelineHolder {
+        width: 948px; } }
+    @media screen and (min-width: 1051px) {
+      #timeline .timelineHolder {
+        width: 998px; } }
+  #timeline article.event {
+    margin-top: 40px;
+    margin-bottom: 40px;
     text-align: left; }
     @media only screen and (max-width: 768px) {
-      #timeline .event {
+      #timeline article.event {
         margin-top: 20px;
         margin-bottom: 20px;
         padding-top: 10px;
         padding-bottom: 10px;
         background: rgba(255, 255, 255, 0.8); } }
     @media only screen and (max-width: 768px) {
-      #timeline .event {
+      #timeline article.event.visible {
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
@@ -896,7 +920,7 @@ header#page-header {
         padding-left: 2.38095%;
         padding-right: 2.38095%; } }
     @media only screen and (min-width: 769px) {
-      #timeline .event {
+      #timeline article.event.visible {
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
@@ -904,7 +928,8 @@ header#page-header {
         float: left;
         padding-left: 2.38095%;
         padding-right: 2.38095%; }
-        #timeline .event:nth-of-type(3n+1) {
+        #timeline article.event.visible.vis-1, #timeline article.event.visible.vis-4, #timeline article.event.visible.vis-5, #timeline article.event.visible.vis-8, #timeline article.event.visible.vis-9, #timeline article.event.visible.vis-12, #timeline article.event.visible.vis-13, #timeline article.event.visible.vis-16, #timeline article.event.visible.vis-17, #timeline article.event.visible.vis-20, #timeline article.event.visible.vis-21, #timeline article.event.visible.vis-24
+        #timeline article.event.visible.vis-25, #timeline article.event.visible.vis-28, #timeline article.event.visible.vis-29, #timeline article.event.visible.vis-32, #timeline article.event.visible.vis-33, #timeline article.event.visible.vis-36, #timeline article.event.visible.vis-37, #timeline article.event.visible.vis-40, #timeline article.event.visible.vis-41, #timeline article.event.visible.vis-44, #timeline article.event.visible.vis-45, #timeline article.event.visible.vis-48, #timeline article.event.visible.vis-49, #timeline article.event.visible.vis-52, #timeline article.event.visible.vis-53, #timeline article.event.visible.vis-56, #timeline article.event.visible.vis-57, #timeline article.event.visible.vis-60 {
           -moz-box-sizing: border-box;
           -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -912,7 +937,7 @@ header#page-header {
           float: left;
           padding-left: 2.38095%;
           padding-right: 2.38095%; } }
-    #timeline .event h3 {
+    #timeline article.event h3 {
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
@@ -924,21 +949,21 @@ header#page-header {
       font-size: 21px;
       line-height: 26.25px; }
       @media only screen and (max-width: 768px) {
-        #timeline .event h3 {
+        #timeline article.event h3 {
           font-size: 18.9px;
           line-height: 23.625px; } }
       @media only screen and (max-width: 768px) {
-        #timeline .event h3 {
+        #timeline article.event h3 {
           -moz-box-sizing: border-box;
           -webkit-box-sizing: border-box;
           box-sizing: border-box;
           width: 80%;
           float: left; } }
-      #timeline .event h3 a {
+      #timeline article.event h3 a {
         color: #000; }
-        #timeline .event h3 a:hover {
+        #timeline article.event h3 a:hover {
           color: #65aec0; }
-    #timeline .event h4 {
+    #timeline article.event h4 {
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
@@ -951,18 +976,18 @@ header#page-header {
       font-size: 21px;
       line-height: 26.25px; }
       @media only screen and (max-width: 768px) {
-        #timeline .event h4 {
+        #timeline article.event h4 {
           font-size: 18.9px;
           line-height: 23.625px; } }
       @media only screen and (max-width: 768px) {
-        #timeline .event h4 {
+        #timeline article.event h4 {
           -moz-box-sizing: border-box;
           -webkit-box-sizing: border-box;
           box-sizing: border-box;
           width: 20%;
           float: left;
           text-align: right; } }
-    #timeline .event p {
+    #timeline article.event p {
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
@@ -970,24 +995,53 @@ header#page-header {
       float: left;
       margin: 0; }
       @media only screen and (max-width: 768px) {
-        #timeline .event p {
+        #timeline article.event p {
           -moz-box-sizing: border-box;
           -webkit-box-sizing: border-box;
           box-sizing: border-box;
           width: 100%;
           float: left; } }
-    #timeline .event .event__image {
+    #timeline article.event .event__image {
       width: 100%; }
     @media only screen and (min-width: 769px) {
-      #timeline .event:nth-of-type(odd) {
+      #timeline article.event.visible.vis-1, #timeline article.event.visible.vis-3, #timeline article.event.visible.vis-5, #timeline article.event.visible.vis-7, #timeline article.event.visible.vis-9, #timeline article.event.visible.vis-11, #timeline article.event.visible.vis-13, #timeline article.event.visible.vis-15, #timeline article.event.visible.vis-17, #timeline article.event.visible.vis-19, #timeline article.event.visible.vis-21, #timeline article.event.visible.vis-23, #timeline article.event.visible.vis-25, #timeline article.event.visible.vis-27, #timeline article.event.visible.vis-29, #timeline article.event.visible.vis-31, #timeline article.event.visible.vis-33, #timeline article.event.visible.vis-35, #timeline article.event.visible.vis-37, #timeline article.event.visible.vis-39, #timeline article.event.visible.vis-41, #timeline article.event.visible.vis-43, #timeline article.event.visible.vis-45, #timeline article.event.visible.vis-47, #timeline article.event.visible.vis-49, #timeline article.event.visible.vis-51, #timeline article.event.visible.vis-53, #timeline article.event.visible.vis-55, #timeline article.event.visible.vis-57, #timeline article.event.visible.vis-59 {
         text-align: right; }
-        #timeline .event:nth-of-type(odd) h4 {
+        #timeline article.event.visible.vis-1 h4, #timeline article.event.visible.vis-3 h4, #timeline article.event.visible.vis-5 h4, #timeline article.event.visible.vis-7 h4, #timeline article.event.visible.vis-9 h4, #timeline article.event.visible.vis-11 h4, #timeline article.event.visible.vis-13 h4, #timeline article.event.visible.vis-15 h4, #timeline article.event.visible.vis-17 h4, #timeline article.event.visible.vis-19 h4, #timeline article.event.visible.vis-21 h4, #timeline article.event.visible.vis-23 h4, #timeline article.event.visible.vis-25 h4, #timeline article.event.visible.vis-27 h4, #timeline article.event.visible.vis-29 h4, #timeline article.event.visible.vis-31 h4, #timeline article.event.visible.vis-33 h4, #timeline article.event.visible.vis-35 h4, #timeline article.event.visible.vis-37 h4, #timeline article.event.visible.vis-39 h4, #timeline article.event.visible.vis-41 h4, #timeline article.event.visible.vis-43 h4, #timeline article.event.visible.vis-45 h4, #timeline article.event.visible.vis-47 h4, #timeline article.event.visible.vis-49 h4, #timeline article.event.visible.vis-51 h4, #timeline article.event.visible.vis-53 h4, #timeline article.event.visible.vis-55 h4, #timeline article.event.visible.vis-57 h4, #timeline article.event.visible.vis-59 h4 {
           text-align: left;
           padding-left: 20px; }
-      #timeline .event:nth-of-type(even) h3,
-      #timeline .event:nth-of-type(even) p {
+      #timeline article.event.visible.vis-2 h3,
+      #timeline article.event.visible.vis-2 p, #timeline article.event.visible.vis-4 h3,
+      #timeline article.event.visible.vis-4 p, #timeline article.event.visible.vis-6 h3,
+      #timeline article.event.visible.vis-6 p, #timeline article.event.visible.vis-8 h3,
+      #timeline article.event.visible.vis-8 p, #timeline article.event.visible.vis-10 h3,
+      #timeline article.event.visible.vis-10 p, #timeline article.event.visible.vis-12 h3,
+      #timeline article.event.visible.vis-12 p, #timeline article.event.visible.vis-14 h3,
+      #timeline article.event.visible.vis-14 p, #timeline article.event.visible.vis-16 h3,
+      #timeline article.event.visible.vis-16 p, #timeline article.event.visible.vis-18 h3,
+      #timeline article.event.visible.vis-18 p, #timeline article.event.visible.vis-20 h3,
+      #timeline article.event.visible.vis-20 p, #timeline article.event.visible.vis-22 h3,
+      #timeline article.event.visible.vis-22 p, #timeline article.event.visible.vis-24 h3,
+      #timeline article.event.visible.vis-24 p, #timeline article.event.visible.vis-26 h3,
+      #timeline article.event.visible.vis-26 p, #timeline article.event.visible.vis-28 h3,
+      #timeline article.event.visible.vis-28 p, #timeline article.event.visible.vis-30 h3,
+      #timeline article.event.visible.vis-30 p, #timeline article.event.visible.vis-32 h3,
+      #timeline article.event.visible.vis-32 p, #timeline article.event.visible.vis-34 h3,
+      #timeline article.event.visible.vis-34 p, #timeline article.event.visible.vis-36 h3,
+      #timeline article.event.visible.vis-36 p, #timeline article.event.visible.vis-38 h3,
+      #timeline article.event.visible.vis-38 p, #timeline article.event.visible.vis-40 h3,
+      #timeline article.event.visible.vis-40 p, #timeline article.event.visible.vis-42 h3,
+      #timeline article.event.visible.vis-42 p, #timeline article.event.visible.vis-44 h3,
+      #timeline article.event.visible.vis-44 p, #timeline article.event.visible.vis-46 h3,
+      #timeline article.event.visible.vis-46 p, #timeline article.event.visible.vis-48 h3,
+      #timeline article.event.visible.vis-48 p, #timeline article.event.visible.vis-50 h3,
+      #timeline article.event.visible.vis-50 p, #timeline article.event.visible.vis-52 h3,
+      #timeline article.event.visible.vis-52 p, #timeline article.event.visible.vis-54 h3,
+      #timeline article.event.visible.vis-54 p, #timeline article.event.visible.vis-56 h3,
+      #timeline article.event.visible.vis-56 p, #timeline article.event.visible.vis-58 h3,
+      #timeline article.event.visible.vis-58 p, #timeline article.event.visible.vis-60 h3,
+      #timeline article.event.visible.vis-60 p {
         float: right; }
-      #timeline .event:nth-of-type(even) h4 {
+      #timeline article.event.visible.vis-2 h4, #timeline article.event.visible.vis-4 h4, #timeline article.event.visible.vis-6 h4, #timeline article.event.visible.vis-8 h4, #timeline article.event.visible.vis-10 h4, #timeline article.event.visible.vis-12 h4, #timeline article.event.visible.vis-14 h4, #timeline article.event.visible.vis-16 h4, #timeline article.event.visible.vis-18 h4, #timeline article.event.visible.vis-20 h4, #timeline article.event.visible.vis-22 h4, #timeline article.event.visible.vis-24 h4, #timeline article.event.visible.vis-26 h4, #timeline article.event.visible.vis-28 h4, #timeline article.event.visible.vis-30 h4, #timeline article.event.visible.vis-32 h4, #timeline article.event.visible.vis-34 h4, #timeline article.event.visible.vis-36 h4, #timeline article.event.visible.vis-38 h4, #timeline article.event.visible.vis-40 h4, #timeline article.event.visible.vis-42 h4, #timeline article.event.visible.vis-44 h4, #timeline article.event.visible.vis-46 h4, #timeline article.event.visible.vis-48 h4, #timeline article.event.visible.vis-50 h4, #timeline article.event.visible.vis-52 h4, #timeline article.event.visible.vis-54 h4, #timeline article.event.visible.vis-56 h4, #timeline article.event.visible.vis-58 h4, #timeline article.event.visible.vis-60 h4 {
         padding-right: 20px;
         float: left;
         text-align: right; } }
