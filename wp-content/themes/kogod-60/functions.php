@@ -190,3 +190,6 @@ function signature_events_custom_post()
 	));
 	// flush_rewrite_rules();
 }	
+
+// Additional image sizes
+add_image_size( 'custom-size', 530 );

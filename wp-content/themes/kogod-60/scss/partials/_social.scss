@@ -1,0 +1,34 @@
+/*
+==========================================================================
+  SOCIAL PAGE (scss/partials/_social.scss)
+==========================================================================
+*/
+
+body.page-template-template-social-php {
+  header {
+    text-align: center;
+    margin-top: 60px;
+
+    @include media-query(mobile) {
+      margin-top: 30px;
+    }
+
+    h1, 
+    h4 {
+      margin: 0;
+      text-transform: uppercase;
+    }
+    
+    h1 {
+      @include font-size-large;
+      line-height: 1;
+    }
+    h4 {
+      @include font-family-interstate-bold;
+      font-size: $medium - 7;
+      @include media-query('mobile') {
+        font-size: ($medium - 7) * .75;
+      }
+    }
+  }
+}

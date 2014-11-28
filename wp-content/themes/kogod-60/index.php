@@ -41,7 +41,7 @@
 							<?php if (get_field('timeline_image')) {
 								$image = get_field('timeline_image'); ?>
 								<a href="<?php the_permalink(); ?>">
-									<img class="event__image" src="<?php echo $image['sizes']['large']; ?>" />
+									<img class="event__image" src="<?php echo $image['sizes']['custom-size']; ?>" width="<?php echo$image['sizes']['custom-size-width']; ?>" height="<?php echo$image['sizes']['custom-size-height']; ?>" />
 								</a>
 							<?php } ?>
 							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>

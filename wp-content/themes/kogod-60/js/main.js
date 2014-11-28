@@ -38,15 +38,16 @@ var cs = (function($) {
 			
 			// PLUGINS CALLS / DEVICE FIXES
 			// Isotope
-			var $isotopeContainer = $('.timelineHolder');
-			$isotopeContainer.isotope({ // init
-				resizable: false, // disable normal resizing
-				layoutMode: 'fitRows',
-				// masonry: {
-				//   columnWidth: $('.event:nth-of-type(1)').outerWidth() * .02,
-				//   gutter: 0
-				// },
-				itemSelector: 'article',
+			var $isotopeContainer = $('.timelineHolder').imagesLoaded( function() {
+			  $isotopeContainer.isotope({ // init
+					resizable: false, // disable normal resizing
+					layoutMode: 'fitRows',
+					// masonry: {
+					//   columnWidth: $('.event:nth-of-type(1)').outerWidth() * .02,
+					//   gutter: 0
+					// },
+					itemSelector: 'article',
+				});
 			});
 			$(window).resize(function(){
 			  $isotopeContainer.isotope({
@@ -112,6 +113,10 @@ var cs = (function($) {
 
 			// FUNCTIONS
 			uiMod.setFilterHeadlineWidth();
+			setTimeout(function(){
+				uiMod.setFilterHeadlineWidth();
+			},100);
+
 
 			
 			// REPEATING FUNCTIONS
@@ -192,7 +197,7 @@ var cs = (function($) {
 			var containerWidth = $('.filter > div ').outerWidth();
 			
 			// 2. Determine new width for headline based on total div width - ul width
-			var newHeadlineWidth = containerWidth - navWidth - 4; // 4 to accomodate for negative margin on li's
+			var newHeadlineWidth = containerWidth - navWidth; // 4 to accomodate for negative margin on li's
 			// console.log(newHeadlineWidth);
 
 			// 3. Set new weidth on headline
