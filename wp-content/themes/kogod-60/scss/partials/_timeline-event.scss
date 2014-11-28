@@ -167,14 +167,19 @@ article.timeline-events {
       margin: 0;
       padding: 0;
       list-style-type: none;
+      text-align: center;
     }
     li {
+      display: inline-block;
       @include media-query('mobile') {
-        @include span(50%);
+        width: 50%;
       }
-      @include span(25%);
-      padding-top: gutter();
-      padding-bottom: gutter();
+      width: 22.7%;
+      padding-top: gutter() * .5;
+      margin-right: gutter() * .4;
+      padding-bottom: gutter() * .5;
+      margin-left: gutter() * .4;
+
       img {
         width: 100%;
         height: auto;

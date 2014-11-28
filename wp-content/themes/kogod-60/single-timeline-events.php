@@ -95,7 +95,11 @@
           <ul class="images">
             <?php foreach( $images as $image ): ?>
             <li>
-              <a href="<?php echo $image['url']; ?>">
+              <a 
+                href="<?php echo $image['url']; ?>"
+                class="fresco"
+                data-fresco-caption="<?php echo $image['caption']; ?>"
+                data-fresco-group="photos">
                 <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
               </a>
             </li>

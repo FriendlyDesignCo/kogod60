@@ -1215,26 +1215,18 @@ article.timeline-events .gallery h4 {
 article.timeline-events .gallery ul.images {
   margin: 0;
   padding: 0;
-  list-style-type: none; }
+  list-style-type: none;
+  text-align: center; }
 article.timeline-events .gallery li {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 25%;
-  float: left;
-  padding-left: 2.38095%;
-  padding-right: 2.38095%;
-  padding-top: 2.38095%;
-  padding-bottom: 2.38095%; }
+  display: inline-block;
+  width: 22.7%;
+  padding-top: 1.19048%;
+  margin-right: 0.95238%;
+  padding-bottom: 1.19048%;
+  margin-left: 0.95238%; }
   @media only screen and (max-width: 768px) {
     article.timeline-events .gallery li {
-      -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      width: 50%;
-      float: left;
-      padding-left: 2.38095%;
-      padding-right: 2.38095%; } }
+      width: 50%; } }
   article.timeline-events .gallery li img {
     width: 100%;
     height: auto; }
