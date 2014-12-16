@@ -16,8 +16,8 @@ get_header(); ?>
     </header>
 
     <section class="social-feed">
-      <div class="tagboard-embed" tgb-slug="icebucketchallenge/199261"></div>
-      <script src="https://tagboard.com/public/js/embed.js"></script>
+      <div class="tagboard-embed" tgb-slug="KogodAt60/200955"></div> 
+      <script src="https://tagboard.com/public/js/embed.js"></script> 
     </section> <!-- .social-feed -->
   </article>
 

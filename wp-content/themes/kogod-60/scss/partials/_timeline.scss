@@ -11,8 +11,30 @@
   background-size: 8px 4px;
   text-align: center;
 
+  .sticky-wrapper {
+    max-width: 1060px;
+    @include span(100% nest);
+    margin: 0 auto;
+    float: none;
+  }
   menu.filter {
     text-align: left;
+
+    &.stuck {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      z-index: 3;
+
+      -moz-transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+
+      background: $white;
+    }
+
     > div {
       position: relative;
       background-color: $white;
@@ -63,7 +85,7 @@
       }
     }
     a {
-      padding: 30px 15px 32px;
+      padding: 30px 15px 31px;
 
       background: $white-60;
       color: $red;
@@ -288,8 +310,8 @@
       }
     }
     .event__image {
-      width: 100%;
-      height: auto;
+      width: 100% !important;
+      height: auto !important;
     }
 
     // Modifications to default styling for columns

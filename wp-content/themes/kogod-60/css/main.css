@@ -755,8 +755,28 @@ header#page-header {
   background-position: top center;
   background-size: 8px 4px;
   text-align: center; }
+  #timeline .sticky-wrapper {
+    max-width: 1060px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    float: left;
+    margin: 0 auto;
+    float: none; }
   #timeline menu.filter {
     text-align: left; }
+    #timeline menu.filter.stuck {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      z-index: 3;
+      -moz-transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      background: #fff; }
     #timeline menu.filter > div {
       position: relative;
       background-color: #fff;
@@ -821,7 +841,7 @@ header#page-header {
       #timeline menu.filter li.toggle {
         display: none; }
     #timeline menu.filter a {
-      padding: 30px 15px 32px;
+      padding: 30px 15px 31px;
       background: rgba(255, 255, 255, 0.6);
       color: #cf1f2e;
       cursor: pointer; }
@@ -1015,8 +1035,8 @@ header#page-header {
           width: 100%;
           float: left; } }
     #timeline article.event .event__image {
-      width: 100%;
-      height: auto; }
+      width: 100% !important;
+      height: auto !important; }
     @media only screen and (min-width: 769px) {
       #timeline article.event.visible.vis-1, #timeline article.event.visible.vis-3, #timeline article.event.visible.vis-5, #timeline article.event.visible.vis-7, #timeline article.event.visible.vis-9, #timeline article.event.visible.vis-11, #timeline article.event.visible.vis-13, #timeline article.event.visible.vis-15, #timeline article.event.visible.vis-17, #timeline article.event.visible.vis-19, #timeline article.event.visible.vis-21, #timeline article.event.visible.vis-23, #timeline article.event.visible.vis-25, #timeline article.event.visible.vis-27, #timeline article.event.visible.vis-29, #timeline article.event.visible.vis-31, #timeline article.event.visible.vis-33, #timeline article.event.visible.vis-35, #timeline article.event.visible.vis-37, #timeline article.event.visible.vis-39, #timeline article.event.visible.vis-41, #timeline article.event.visible.vis-43, #timeline article.event.visible.vis-45, #timeline article.event.visible.vis-47, #timeline article.event.visible.vis-49, #timeline article.event.visible.vis-51, #timeline article.event.visible.vis-53, #timeline article.event.visible.vis-55, #timeline article.event.visible.vis-57, #timeline article.event.visible.vis-59 {
         text-align: right; }
@@ -1582,6 +1602,184 @@ body.page-template-template-about-php .gallery li {
   body.page-template-template-about-php .gallery li img {
     width: 100%;
     height: auto; }
+
+/*
+==========================================================================
+  ABOUT PAGE (scss/partials/_about.scss)
+==========================================================================
+*/
+body.page-template-template-contact-php header {
+  text-align: center;
+  margin-top: 60px; }
+  @media only screen and (max-width: 768px) {
+    body.page-template-template-contact-php header {
+      margin-top: 30px; } }
+  body.page-template-template-contact-php header h1,
+  body.page-template-template-contact-php header h4 {
+    margin: 0;
+    text-transform: uppercase; }
+  body.page-template-template-contact-php header h1 {
+    font-size: 50px;
+    line-height: 62.5px;
+    line-height: 1; }
+    @media only screen and (max-width: 768px) {
+      body.page-template-template-contact-php header h1 {
+        font-size: 25px;
+        line-height: 31.25px; } }
+  body.page-template-template-contact-php header h4 {
+    font-family: Interstate, Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px; }
+    @media only screen and (max-width: 768px) {
+      body.page-template-template-contact-php header h4 {
+        font-size: 22.5px; } }
+
+.gform_wrapper {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 70%;
+  float: left;
+  padding-left: 2.38095%;
+  padding-right: 2.38095%;
+  margin: 0 auto;
+  float: none; }
+  @media only screen and (max-width: 768px) {
+    .gform_wrapper {
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      width: 100%;
+      float: left;
+      margin-bottom: 100px; } }
+  .gform_wrapper ul.gform_fields {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
+    .gform_wrapper ul.gform_fields > li {
+      clear: both;
+      display: block;
+      margin-bottom: 20px; }
+      .gform_wrapper ul.gform_fields > li#field_1_1 {
+        margin-bottom: 10px; }
+  .gform_wrapper .gf_clear {
+    clear: both; }
+  .gform_wrapper .ginput_left,
+  .gform_wrapper .ginput_right {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 45%;
+    float: left; }
+    .gform_wrapper .ginput_left input,
+    .gform_wrapper .ginput_right input {
+      margin-bottom: 5px; }
+    .gform_wrapper .ginput_left label,
+    .gform_wrapper .ginput_right label {
+      color: rgba(0, 0, 0, 0.4); }
+  .gform_wrapper .ginput_right {
+    float: right; }
+  .gform_wrapper label {
+    font-family: "Interstate Light", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal; }
+  .gform_wrapper input[type=text],
+  .gform_wrapper textarea {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    -webkit-transition: all 250ms ease-in-out;
+    -moz-transition: all 250ms ease-in-out;
+    -ms-transition: all 250ms ease-in-out;
+    -o-transition: all 250ms ease-in-out;
+    transition: all 250ms ease-in-out; }
+    .gform_wrapper input[type=text]:focus,
+    .gform_wrapper textarea:focus {
+      background: #fff;
+      border: 1px solid #000; }
+  .gform_wrapper input[type=submit] {
+    display: block;
+    margin: 0 auto;
+    padding: 12px 30px 15px;
+    background: #000;
+    border: 0;
+    color: #fff;
+    font-family: Interstate, Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    text-transform: uppercase; }
+    .gform_wrapper input[type=submit]:hover {
+      background: #65aec0; }
+    .gform_wrapper input[type=submit]:active {
+      opacity: .5; }
+  .gform_wrapper .gfield_required {
+    color: #cf1f2e;
+    font-family: Interstate, Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold; }
+  .gform_wrapper .validation_error {
+    padding: 20px;
+    margin-bottom: 20px;
+    clear: both;
+    background: rgba(207, 31, 46, 0.05);
+    border: 1px solid rgba(207, 31, 46, 0.2);
+    color: #cf1f2e;
+    text-align: center;
+    font-family: Interstate, Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal; }
+  .gform_wrapper .gfield_error {
+    padding: 20px;
+    background: rgba(207, 31, 46, 0.05);
+    border: 1px solid rgba(207, 31, 46, 0.2);
+    color: #cf1f2e; }
+    .gform_wrapper .gfield_error input[type=text],
+    .gform_wrapper .gfield_error textarea {
+      background: #fff;
+      border: 1px solid #cf1f2e; }
+  .gform_wrapper .validation_message {
+    margin-top: 10px;
+    color: #cf1f2e;
+    font-family: Interstate, Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal; }
+
+.gform_confirmation_wrapper {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 70%;
+  float: left;
+  padding-left: 2.38095%;
+  padding-right: 2.38095%;
+  float: none;
+  margin: 0 auto;
+  clear: both;
+  text-align: center;
+  font-family: "Interstate Light", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 37px;
+  line-height: 46.25px; }
+  @media only screen and (max-width: 768px) {
+    .gform_confirmation_wrapper {
+      font-size: 27.75px;
+      line-height: 34.6875px; } }
+  @media only screen and (max-width: 768px) {
+    .gform_confirmation_wrapper {
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      width: 100%;
+      float: left;
+      font-size: 21px;
+      line-height: 26.25px;
+      margin-bottom: 100px; } }
+  @media only screen and (max-width: 768px) and (max-width: 768px) {
+    .gform_confirmation_wrapper {
+      font-size: 18.9px;
+      line-height: 23.625px; } }
 
 /*
 ==========================================================================

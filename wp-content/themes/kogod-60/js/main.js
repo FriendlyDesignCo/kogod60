@@ -37,16 +37,22 @@ var cs = (function($) {
 		var init = function() { // Called on page load, calls all other functions that should occur on page load
 			
 			// PLUGINS CALLS / DEVICE FIXES
+			// Waypoint stickys
+			$('menu.filter').waypoint('sticky', {
+				handler: function(dir) {
+			  	uiMod.setFilterHeadlineWidth();
+			  }
+			});
+
 			// Isotope
 			var $isotopeContainer = $('.timelineHolder').imagesLoaded( function() {
 			  $isotopeContainer.isotope({ // init
 					resizable: false, // disable normal resizing
 					layoutMode: 'fitRows',
-					// masonry: {
-					//   columnWidth: $('.event:nth-of-type(1)').outerWidth() * .02,
-					//   gutter: 0
-					// },
 					itemSelector: 'article',
+					onLayout: function() {
+            $(window).trigger("scroll");
+	        }
 				});
 			});
 			$(window).resize(function(){
@@ -55,6 +61,10 @@ var cs = (function($) {
 			    masonry: { columnWidth: $('.event:nth-of-type(1)').outerWidth() * .02 }
 			  });
 			});
+
+			// Image lazy loading
+			// var $imgs = $("img.lazy");
+			// $imgs.lazyload();
 
 			conditionizr({ // http://conditionizr.com/docs.html
 				debug      : false,
@@ -120,9 +130,9 @@ var cs = (function($) {
 
 			
 			// REPEATING FUNCTIONS
-			// var example = setInterval(function(){
-			// 	// do stuff
-			// }, 200);
+			var onInterval = setInterval(function(){
+				$isotopeContainer.isotope('layout');
+			}, 200);
 
 
 			/*

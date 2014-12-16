@@ -1,0 +1,177 @@
+/*
+==========================================================================
+  ABOUT PAGE (scss/partials/_about.scss)
+==========================================================================
+*/
+
+body.page-template-template-contact-php {
+  header {
+    text-align: center;
+    margin-top: 60px;
+
+    @include media-query(mobile) {
+      margin-top: 30px;
+    }
+
+    h1, 
+    h4 {
+      margin: 0;
+      text-transform: uppercase;
+    }
+    
+    h1 {
+      @include font-size-large;
+      line-height: 1;
+    }
+    h4 {
+      @include font-family-interstate-bold;
+      font-size: $medium - 7;
+      @include media-query('mobile') {
+        font-size: ($medium - 7) * .75;
+      }
+    }
+  } 
+}
+
+.gform_wrapper {
+  @include span(70%);
+  margin: 0 auto;
+  float: none;
+
+  @include media-query(mobile) {
+    @include span(100% nest);
+    margin-bottom: 100px;
+  }
+
+  ul.gform_fields {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    > li {
+      clear: both;
+      display: block;
+      margin-bottom: 20px;
+
+      &#field_1_1 {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .gf_clear {
+    clear: both;
+  }
+
+  .ginput_left,
+  .ginput_right {
+    @include span(45% nest);
+
+    input {
+      margin-bottom: 5px;
+    }
+
+    label {
+      color: $black-40;
+    }
+  }
+  .ginput_right {
+    float: right;
+  }
+
+  label {
+    @include font-family-interstate-light;
+  }
+
+  input[type=text],
+  textarea {
+    width: 100%;
+    background: rgba($black, .02);
+    border: 1px solid $black-40;
+
+    @include transition(all,250ms);
+
+    &:focus {
+      background: $white;
+      border: 1px solid $black;
+    }
+  }
+
+  input[type=submit] {
+    display: block;
+    margin: 0 auto;
+    padding: 12px 30px 15px;
+    
+    background: $black;
+    border: 0;
+    color: $white;
+    @include font-family-interstate-bold;
+    text-transform: uppercase;
+
+    &:hover {
+      background: $blue;
+    }
+    &:active {
+      opacity: .5;
+    }
+  }
+
+  .gfield_required {
+    color: $red;
+    @include font-family-interstate-bold;
+  }
+
+  .validation_error {
+    padding: 20px;
+    margin-bottom: 20px;
+    clear: both;
+    
+    background: $red-05;
+    border: 1px solid $red-20;
+    color: $red;
+    text-align: center;
+    @include font-family-interstate-regular;
+  }
+
+  .gfield_error {
+    padding: 20px;
+
+    background: $red-05;
+    border: 1px solid $red-20;
+    color: $red;
+
+    input[type=text],
+    textarea {
+      background: $white;
+      border: 1px solid $red;
+    }
+  }
+
+  .validation_message {
+    margin-top: 10px;
+
+    color: $red;
+    @include font-family-interstate-regular; 
+  }
+}
+.gform_confirmation_wrapper {
+  @include span(70%);
+  float: none;
+  margin: 0 auto;
+  clear: both;
+
+  text-align: center;
+  @include font-family-interstate-light;
+  @include font-size-medium;
+
+  @include media-query(mobile) {
+    @include span(100% nest);
+    @include font-size-default;
+    margin-bottom: 100px;
+  }
+}
+
+
+
+
+

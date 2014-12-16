@@ -42,6 +42,7 @@
 								$image = get_field('timeline_image'); ?>
 								<a href="<?php the_permalink(); ?>">
 									<img class="event__image" src="<?php echo $image['sizes']['custom-size']; ?>" width="<?php echo$image['sizes']['custom-size-width']; ?>" height="<?php echo$image['sizes']['custom-size-height']; ?>" />
+									<!-- <img class="event__image lazy" src="<?php bloginfo('template_url'); ?>/img/background-diag-line-repeat-8x8.gif" data-original="<?php echo $image['sizes']['custom-size']; ?>" width="<?php echo$image['sizes']['custom-size-width']; ?>" height="<?php echo$image['sizes']['custom-size-height']; ?>" scale="auto" /> -->
 								</a>
 							<?php } ?>
 							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
