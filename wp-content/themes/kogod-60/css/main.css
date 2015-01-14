@@ -392,6 +392,13 @@ a, a img, input[type=submit] {
   -o-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out; }
 
+img.alignleft {
+  float: left;
+  margin-right: 15px; }
+img.alignright {
+  float: right;
+  margin-left: 15px; }
+
 address {
   font-style: normal; }
 
@@ -655,7 +662,7 @@ h6 {
 */
 .auBar {
   height: 50px;
-  padding-top: 13px;
+  padding-top: 10px;
   position: absolute;
   top: 0;
   right: 0;
@@ -664,9 +671,9 @@ h6 {
   color: #fff; }
   .auBar a {
     display: block;
-    width: 205px;
-    height: 23px;
-    background-image: url(../img/logo-kogod-white-410x46.png);
+    width: 250px;
+    height: 28px;
+    background-image: url(../img/logo-kogod-white-500x56.png);
     background-repeat: none;
     background-size: 100% 100%; }
   body.admin-bar .auBar {
@@ -1563,7 +1570,7 @@ body.page-template-template-about-php .description .image {
   body.page-template-template-about-php .description .image p {
     font-style: italic;
     color: rgba(0, 0, 0, 0.5); }
-body.page-template-template-about-php .description img {
+body.page-template-template-about-php .description .description__images img {
   width: 100%;
   height: auto; }
 body.page-template-template-about-php .video,
@@ -1686,7 +1693,7 @@ body.page-template-template-contact-php header {
     font-weight: normal; }
   .gform_wrapper input[type=text],
   .gform_wrapper textarea {
-    width: 100%;
+    width: 100% !important;
     background: rgba(0, 0, 0, 0.02);
     border: 1px solid rgba(0, 0, 0, 0.4);
     -webkit-transition: all 250ms ease-in-out;

@@ -136,9 +136,11 @@ body.page-template-template-about-php {
         color: $black-50;
       }
     }
-    img {
-      width: 100%;
-      height: auto;
+    .description__images {
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 
