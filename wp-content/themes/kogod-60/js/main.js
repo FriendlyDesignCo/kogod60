@@ -62,10 +62,6 @@ var cs = (function($) {
 			  });
 			});
 
-			// Image lazy loading
-			// var $imgs = $("img.lazy");
-			// $imgs.lazyload();
-
 			conditionizr({ // http://conditionizr.com/docs.html
 				debug      : false,
 				scriptSrc  : 'js/conditionizr/',
@@ -131,8 +127,9 @@ var cs = (function($) {
 			
 			// REPEATING FUNCTIONS
 			var onInterval = setInterval(function(){
-				$isotopeContainer.isotope('layout');
-			}, 200);
+				lazyLoadTimelineImages();
+				$isotopeContainer.isotope('layout');				
+			}, 500);
 
 
 			/*
@@ -145,7 +142,7 @@ var cs = (function($) {
 		};
 
 		var onScroll = function() { // Called when the browser window is scrolled
-			// Functions
+			
 		};
 
 		var resize = function() { // Called when the browser window is resized
@@ -181,6 +178,90 @@ var cs = (function($) {
 			}
 			else {
 				return winWidth;
+			}
+		};
+
+		var howMuchVisible = function(el) { // Checks how much of an element is visible by checking its position and height compared to window height.
+			var $w = $(window);
+			// Get dimensions
+			var windowHeight 	= $w.height(),
+					scrollTop 		= $w.scrollTop(),
+					elHeight 			= el.outerHeight(),
+					elOffset 			= el.offset().top,
+					elFromTop 		= (elOffset - scrollTop),
+					elFromBottom	= windowHeight - (elFromTop + elHeight);
+			// console.table([{windowHeight:windowHeight, scrollTop:scrollTop, elHeight:elHeight, elOffset:elOffset, elFromTop:elFromTop, elFromBottom:elFromBottom}]);
+
+			// Check if the item is at all visible
+			if (
+					(elFromTop <= windowHeight && elFromTop >= 0) || 
+					(elFromBottom <= windowHeight && elFromBottom >= 0) || 
+					(elFromTop <= 0 && elFromBottom <= 0 && elHeight >= windowHeight)
+				) {
+				// console.log('Item is in view.');
+
+				// If full element is visible...
+				if (elFromTop >= 0 && elFromBottom >= 0) {
+					var o = {
+						pixels: elHeight, // Height of element that is visible (pixels), in this case = to elHeight since the whole thing is visible
+						percent: (elHeight / windowHeight) * 100 // Percent of window height element takes up.
+					};
+					return o; // Return the height of the element
+				}
+				// If only the TOP of the element is visible...
+				else if (elFromTop >= 0 && elFromBottom < 0) {
+					var o = {
+						pixels: windowHeight - elFromTop, // Height of element that is visible (pixels)
+						percent: ((windowHeight - elFromTop) / windowHeight) * 100 // Percent of window height element takes up.
+					};
+					return o;
+				}
+				// If only the BOTTOM of the element is visible...
+				else if (elFromTop < 0 && elFromBottom >= 0) {
+					var o = {
+						pixels: windowHeight - elFromBottom, // Height of element that is visible (pixels)
+						percent: ((windowHeight - elFromBottom) / windowHeight) * 100 // Percent of window height element takes up.
+					};
+					return o;
+				}
+				// If the element is bigger than the window and only a portion of it is being shown...
+				else if (elFromTop <= 0 && elFromBottom <= 0 && elHeight >= windowHeight) {
+					var o = {
+						pixels: windowHeight, // Height of element that is visible (pixels)
+						percent: 100 // Percent of window height element takes up. 100 b/c it's covering the window.
+					};
+					return o;
+				}
+			}
+			else {
+				// console.log('Item is NOT in view.');
+				var o = { // Item isn't visible, so return 0 for both values.
+					pixels: 0,
+					percent: 0
+				};
+				return o;
+			}
+		};
+
+		var images = [];
+		$('img.event__image').each(function(){
+			images.push({
+				self: $(this),
+				id: $(this).attr('id')
+			});
+		});
+
+		var lazyLoadTimelineImages = function() {
+			
+			for (i=0; i<images.length; i++) {
+				if (howMuchVisible(images[i].self).percent > 0 && $('#' + images[i].id).attr('src').indexOf('placeholder.gif') > -1) { // Image is visible but not loaded, so load it.
+					var $img = images[i].self;
+					$img.velocity({ 'opacity': 0 }, 100, function(){ 
+						$img.attr('src', $img.attr('data-src')).stop().bind('load',function(){
+							$img.velocity({ 'opacity': 1 }, 200, function(){ });
+						});
+					});
+				}
 			}
 		};
 

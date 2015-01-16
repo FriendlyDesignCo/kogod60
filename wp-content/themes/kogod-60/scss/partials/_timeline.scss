@@ -312,6 +312,11 @@
     .event__image {
       width: 100% !important;
       height: auto !important;
+      @include transition(all,500ms);
+
+      &.visible {
+        opacity: 1 !important;
+      }
     }
 
     // Modifications to default styling for columns

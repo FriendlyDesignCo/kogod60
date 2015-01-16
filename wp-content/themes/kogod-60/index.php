@@ -41,8 +41,7 @@
 							<?php if (get_field('timeline_image')) {
 								$image = get_field('timeline_image'); ?>
 								<a href="<?php the_permalink(); ?>">
-									<img class="event__image" src="<?php echo $image['sizes']['custom-size']; ?>" width="<?php echo$image['sizes']['custom-size-width']; ?>" height="<?php echo$image['sizes']['custom-size-height']; ?>" />
-									<!-- <img class="event__image lazy" src="<?php bloginfo('template_url'); ?>/img/background-diag-line-repeat-8x8.gif" data-original="<?php echo $image['sizes']['custom-size']; ?>" width="<?php echo$image['sizes']['custom-size-width']; ?>" height="<?php echo$image['sizes']['custom-size-height']; ?>" scale="auto" /> -->
+									<img class="event__image" id="img-<?php echo $image['id']; ?>" src="<?php echo bloginfo('template_url'); ?>/img/placeholder.gif" data-src="<?php echo $image['sizes']['custom-size']; ?>" width="<?php echo$image['sizes']['custom-size-width']; ?>" height="<?php echo$image['sizes']['custom-size-height']; ?>" />
 								</a>
 							<?php } ?>
 							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>

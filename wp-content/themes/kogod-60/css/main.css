@@ -1043,7 +1043,14 @@ header#page-header {
           float: left; } }
     #timeline article.event .event__image {
       width: 100% !important;
-      height: auto !important; }
+      height: auto !important;
+      -webkit-transition: all 500ms ease-in-out;
+      -moz-transition: all 500ms ease-in-out;
+      -ms-transition: all 500ms ease-in-out;
+      -o-transition: all 500ms ease-in-out;
+      transition: all 500ms ease-in-out; }
+      #timeline article.event .event__image.visible {
+        opacity: 1 !important; }
     @media only screen and (min-width: 769px) {
       #timeline article.event.visible.vis-1, #timeline article.event.visible.vis-3, #timeline article.event.visible.vis-5, #timeline article.event.visible.vis-7, #timeline article.event.visible.vis-9, #timeline article.event.visible.vis-11, #timeline article.event.visible.vis-13, #timeline article.event.visible.vis-15, #timeline article.event.visible.vis-17, #timeline article.event.visible.vis-19, #timeline article.event.visible.vis-21, #timeline article.event.visible.vis-23, #timeline article.event.visible.vis-25, #timeline article.event.visible.vis-27, #timeline article.event.visible.vis-29, #timeline article.event.visible.vis-31, #timeline article.event.visible.vis-33, #timeline article.event.visible.vis-35, #timeline article.event.visible.vis-37, #timeline article.event.visible.vis-39, #timeline article.event.visible.vis-41, #timeline article.event.visible.vis-43, #timeline article.event.visible.vis-45, #timeline article.event.visible.vis-47, #timeline article.event.visible.vis-49, #timeline article.event.visible.vis-51, #timeline article.event.visible.vis-53, #timeline article.event.visible.vis-55, #timeline article.event.visible.vis-57, #timeline article.event.visible.vis-59 {
         text-align: right; }
