@@ -16,20 +16,16 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-// define('DB_NAME', 'db139172_kogodwpbuild');
-define('DB_NAME', 'kogod_wp');
+define('DB_NAME', 'db572800517');
 
 /** MySQL database username */
-// define('DB_USER', 'db139172_kogwpb');
-define('DB_USER', 'root');
+define('DB_USER', 'dbo572800517');
 
 /** MySQL database password */
-// define('DB_PASSWORD', 'wm0ajKsnDYIY.');
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', 'R9}rFUhQHxr7ze');
 
 /** MySQL hostname */
-// define('DB_HOST', 'external-db.s139172.gridserver.com');
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'db572800517.db.1and1.com');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');

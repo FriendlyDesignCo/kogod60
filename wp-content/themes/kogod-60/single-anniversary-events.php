@@ -7,7 +7,8 @@
 
     <?php
       // Setup basic post data for the page
-      $date = DateTime::createFromFormat('Ymd', get_field('event_date'));
+      $rawDate = get_field('event_date');
+      $date = date('F j, Y', strtotime($rawDate));
       $description = get_field('event_description_long');
       $featuredImagesBoolean = get_field('featured_images_boolean');
       $featuredImage1 = get_field('featured_image_1');
@@ -18,7 +19,7 @@
     ?>
     <header>
       <h1><?php the_title(); ?></h1>
-      <h4><?php echo $date->format('F j, Y'); ?></h4>
+      <h4><?php echo $date; ?></h4>
       <div class="hr"></div>
     </header>
 
