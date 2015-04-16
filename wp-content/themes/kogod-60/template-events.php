@@ -45,8 +45,8 @@ get_header(); ?>
             <header>
               <?php 
                 $rawDate = get_field('event_date');
-                $day = date('d', $rawDate);
-                $month = date('M', $rawDate);
+                $day = date('d', strtotime($rawDate));
+                $month = date('M', strtotime($rawDate));
               ?>
               <div class="date">
                 <span class="day"><?php echo $day; ?></span>
@@ -90,8 +90,8 @@ get_header(); ?>
             <header>
               <?php 
                 $rawDate = get_field('event_date');
-                $day = date('d', $rawDate);
-                $month = date('M', $rawDate);
+                $day = date('d', strtotime($rawDate));
+                $month = date('M', strtotime($rawDate));
               ?>
               <div class="date">
                 <span class="day"><?php echo $day; ?></span>
