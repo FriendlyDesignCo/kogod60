@@ -7,7 +7,7 @@
 					<div class="contact">
 						<a href="http://www.american.edu/kogod/" class="auLogo"></a>
 						<address>4400 Massachusetts Avenue, NW, Washington, DC 20016</address>
-						<p><a href="tel:202-885-1000">(202) 885-1000</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Maps</a>
+						<p><a href="tel:202-885-1000">(202) 885-1000</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.american.edu/contact-au.cfm">Contact AU</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.american.edu/aumaps/index.cfm">Maps</a>
 					</div> <!-- .contact -->
 
 					<div class="meta">
